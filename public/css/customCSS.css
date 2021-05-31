@@ -1,0 +1,398 @@
+/* Custom CSS */
+a,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+@media screen and (max-width: 767px) {
+    .ranking-table-head {
+        font-size: small;
+    }
+
+    tbody {
+        font-size: small;
+    }
+
+    .nav-item:hover {
+        border-bottom: solid 1px white;
+        border-radius: 0px !important;
+        font-size: larger;
+        font-weight: bolder;
+    }
+
+    .nav-item {
+        /*border-top: solid 1px white;*/
+        text-align: center;
+    }
+
+    #nav-item-dashboard {
+        border-top: none !important;
+    }
+
+    .navbar-collapse {
+        margin-top: 10px;
+    }
+
+    a.dropdown-item {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    ul.navbar-nav > div {
+        margin-top: 5px;
+    }
+
+    #navbarNavDropdown > ul > li > a.active {
+        border-bottom: solid 1px white;
+        border-top: solid 1px white;
+        border-right: none;
+        border-radius: 0px;
+        font-weight: bolder;
+    }
+
+    #nav-item-user {
+        border: none !important;
+    }
+
+    #welcome-image {
+        width: 90%;
+    }
+
+    #div-welcome-image {
+        text-align: center;
+    }
+
+    .bd-placeholder-img {
+        height: 400px;
+    }
+
+    #div-ranking {
+        font-size: smaller;
+    }
+}
+
+@media screen and (max-width: 767px) {
+}
+
+/* Navbar custom */
+.navbar-collapse {
+    line-height: 250%;
+}
+
+#icon-padel,
+#news-icon {
+    filter: invert(1);
+}
+
+a.navbar-brand {
+    margin-right: 10px;
+}
+
+.navbar-toggler  {
+    color: green;
+    background-color: rgb(255, 255, 255);
+}
+
+.nav-item {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+a.active.nav-link {
+    background-color: #00a85a;
+    border-bottom: solid 4px white;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+li.nav-item:hover {
+    background-color: #21ac6b5b;
+    border-bottom: none;
+    border-radius: 5px;
+}
+
+.dropdown-item.user:hover {
+    background-color: rgba(0, 110, 255, 0.75) !important;
+    border-radius: 15px;
+}
+
+.dropdown-item.logout:hover {
+    background-color: rgba(255, 0, 0, 0.7) !important;
+}
+
+/* Dropdown custom */
+a.dropdown-item {
+    font-size: 18px;
+}
+
+a.dropdown-item:hover {
+    background-color: #198754;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+a.dropdown-item.active {
+    background-color: #00a85a;
+    font-weight: bolder;
+}
+
+/* Breadcrumb custom */
+.breadcrumb-div {
+    margin-top: 4em;
+}
+
+a.breadcrumb.active {
+    font-weight: normal;
+}
+
+ol.breadcrumb {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #afafaf20;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+li.breadcrumb-item > a {
+    font-weight: normal;
+    text-decoration: none;
+    color: #6c757d;
+}
+
+li.breadcrumb-item.active > a {
+    font-weight: bold;
+}
+
+#findMatch {
+    margin-top: 10px;
+    overflow: auto;
+}
+
+#btnFindMatch {
+    margin-top: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#btnSignIn {
+    font-style: italic;
+    color: #166440;
+    border-radius: 9px;
+    margin-top: 5px;
+}
+
+#btnSignIn:hover {
+    font-weight: bolder;
+}
+
+h1.display-3 {
+    margin-bottom: 20px;
+}
+
+h1 > img {
+    padding-bottom: 10px;
+}
+
+/* Table ranking */
+#ranking {
+    margin-top: 2em;
+}
+
+#ranking-title {
+    border: solid 4px rgba(0, 0, 0);
+    text-align: center;
+}
+
+#div-ranking {
+    margin-top: 3em;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+    background-color: #00a85a; /* rgb(24, 168, 19); */
+    color: white !important;
+}
+
+.table-hover tbody tr:hover a.btn {
+    color: white !important;
+}
+
+.table-hover tbody tr:hover a.btn:hover {
+    color: rgb(251, 255, 0) !important;
+}
+
+div.card {
+    color: initial;
+}
+
+.card .card-body > p {
+    margin-bottom: 0px !important;
+}
+
+a.btn {
+    color: black;
+    font-weight: bold;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 12px !important;
+}
+
+.username {
+    font-style: italic;
+    font-weight: bold;
+}
+
+a.btn:active {
+    border-style: outset;
+}
+
+td > a,
+td > a:hover {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+th {
+    text-transform: uppercase;
+}
+
+.last-matches {
+    font-weight: bold;
+}
+
+.level {
+    font-family: Verdana;
+    font-style: italic;
+}
+
+/* The animation code 
+@keyframes animationSignIn {
+    0%   {background-color: white;}
+}
+
+#btnFindMatch:hover {
+    animation-name: animationSignIn;
+    animation-duration: 1.5s;
+} */
+
+/* Welcome custom */
+.first-component {
+    margin-top: 4em;
+}
+
+p.lead {
+    text-align: justify;
+}
+
+#div-welcome-image {
+    text-align: center;
+}
+
+.title {
+    color: #00a85a; /*rgb(24, 168, 19);*/
+}
+
+/* Card custom */
+h4.mb-4 .lh-1 .fw-bold .text-uppercase .d-flex .justify-content-center {
+    background-color: white !important;
+}
+
+div.card-campo {
+    background-image: url("../img/prenota-campo.jpeg");
+}
+
+#campo-img,
+#partite-img {
+    object-fit: cover;
+    width: 100%;
+    height: 320px;
+}
+
+#btn-annulla:hover {
+    color: white !important;
+}
+
+#btn-prenota {
+    font-weight: bolder;
+}
+
+#navbarDropdown-user {
+    border-radius: 10px !important;
+    font-weight: bold;
+}
+
+#dropdown-menu-dashboard {
+    border-radius: 15px !important;
+}
+
+/* Dashboard custom */
+span.input-group-text {
+    font-style: italic;
+    font-weight: bolder;
+}
+
+/* Pagination custom */
+.pagination {
+    justify-content: center;
+}
+.page-item.active .page-link {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.page-item .page-link {
+    color: #198754;
+}
+
+/* News custom */
+.accordion-button:not(.collapsed) {
+    background-color: #198754;
+    color: white;
+    font-weight: bold;
+}
+
+.accordion-button.collapsed {
+    font-weight: bold;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: none;
+}
+
+.title-accordion {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.ml-auto, .mx-auto {
+    margin-left: auto !important;
+}
+
+.list-group-item:hover {
+    background-color: rgb(233, 233, 233);
+}
+
+.accordion-body-custom {
+    max-height: 300px;
+}
+
+/* DataTables custom */
+#ranking-table_filter {
+    margin-bottom: 15px;
+}
+
+#ranking-table_paginate {
+    margin-top: 15px;
+}
