@@ -89,12 +89,11 @@
                             </svg>
                         </button>
 
-                        {{-- @if (Route::has('password.request'))
-                                    <a class="btn btn-link font-italic" href="{{ route('password.request') }}"
-                        id="forgot-password">
-                        {{ __('Forgot your Password?') }}
+                        @if (Route::has('password.request'))
+                        <a class="btn font-italic mt-3" href="{{ route('password.request') }}" id="forgot-password">
+                            {{ __('Hai dimenticato la password?') }}
                         </a>
-                        @endif --}}
+                        @endif
                     </div>
                 </div>
                 </form>

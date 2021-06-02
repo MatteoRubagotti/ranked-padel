@@ -20,9 +20,9 @@
                             <div class="col-md-6">
                                 <input id="username" type="text"
                                     class="form-control @error('username') is-invalid @enderror" name="username"
-                                    value="{{ old('username') }}" required autocomplete="username" autofocus
+                                    value="{{ old('username') }}" autocomplete="username" autofocus
                                     oninvalid="this.setCustomValidity('Inserisci un username')"
-                                    oninput="setCustomValidity('')">
+                                    oninput="setCustomValidity('')" required>
 
                                 @error('username')
                                 <span class="invalid-feedback" role="alert">

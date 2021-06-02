@@ -13,7 +13,7 @@
 
                     @include('user.bannersDashboard')
 
-                    <div class="container">
+                    <div class="container mt-2">
                         <div class="row">
                             <div class="col-8">
                                 @if($user->sex == 'm')

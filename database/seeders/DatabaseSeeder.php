@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Game;
 use App\Models\DataLayer;
+use Facade\Ignition\Support\FakeComposer;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => Hash::make('1'),
             'is_admin' => 1,
+            'email_verified_at' => now(),
         ]);
 
         DB::table('users')->insert([
@@ -39,6 +41,7 @@ class DatabaseSeeder extends Seeder
             'hand' => 'dx',
             'sex' => 'm',
             'level' => '0',
+            'email_verified_at' => now(),
         ]);
 
         DB::table('users')->insert([
@@ -49,7 +52,8 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('1'),
             'hand' => 'dx',
             'sex' => 'f',
-            'level' => '1'
+            'level' => '1',
+            'email_verified_at' => now(),
         ]);
 
         DB::table('Field')->insert([

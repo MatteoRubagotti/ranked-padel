@@ -118,7 +118,7 @@ li.nav-item:hover {
 }
 
 .dropdown-item.logout:hover {
-    background-color: rgba(255, 0, 0, 0.7) !important;
+    background-color: #dc3545 !important;
 }
 
 /* Dropdown custom */

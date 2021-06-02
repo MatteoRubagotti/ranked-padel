@@ -24,13 +24,13 @@ Route::get('/ranking', 'RankingController@showRanking')->name('ranking');
 Route::get('/#news', 'PageController@showNews')->name('news');
 Route::get('/campi', 'FieldController@showCampi')->name('campi');
 
-Route::group(['middleware' => ['auth', 'check.games']], function () {
+Route::group(['middleware' => ['auth', 'check.games', 'verified']], function () {
 
     Route::group(['middleware' => ['is_admin']], function () {
 
         Route::get('/partite', 'GameController@showPartite')->name('partite');
 
-        Route::get('/dashboard/user', [DashboardController::class, 'showUserDashboard'])->name('user.dashboard');
+        Route::get('/dashboard/user', [DashboardController::class, 'showUserDashboard'])->name('user.dashboard')->middleware('verified');
 
         Route::prefix('/dashboard/admin')->group(function () {
             Route::get('/', [DashboardController::class, 'showAdminDashboard'])->name('admin.dashboard');
@@ -57,9 +57,11 @@ Route::group(['middleware' => ['auth', 'check.games']], function () {
         Route::post('/aggiornaProfilo', 'DashboardController@aggiornaProfilo')->name('user.aggiornaProfilo');
     });
 });
-
-/* Laravel UI Authentication (Scaffold)*/
-Auth::routes();
+// Laravel UI Authentication (Scaffold)
+Auth::routes(['verify' => true]);
+Route::get('/email/verify', function () {
+    return view('auth.verify');
+})->middleware('auth')->name('verification.notice');
 
 // AJAX Request
 Route::get('/ajaxOrari', 'FieldController@ajaxCheckHoursAvailable');

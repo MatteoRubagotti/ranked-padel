@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'password' => "Le password devono corrispondere e contenere almeno 6 caratteri.",
+    'password' => "Le password devono corrispondere.",
     'reset'    => "La tua password è stata resettata!",
-    'sent'     => "Ti abbiamo inviato il link per il reset della password via email!",
+    'sent'     => "Ti abbiamo inviato il link per il reset della password via e-mail!",
     'token'    => "Il token di reset della password non è valido.",
-    'user'     => "Non è possibile trovare un utente con l'indirizzo email inserito.",
+    'user'     => "Non è possibile trovare un utente con l'indirizzo e-mail inserito.",
 
 ];
