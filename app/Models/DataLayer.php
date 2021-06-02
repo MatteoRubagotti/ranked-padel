@@ -15,16 +15,20 @@ use function PHPUnit\Framework\isNull;
 
 class DataLayer
 {
+    /**
+     * Return news created at most 14 days ago
+     */
     public function listNews()
     {
-        $news = News::all()->sortByDesc('id')->take(3);
+        $number_news = 3;
+        $news = News::where('created_at', '>', Carbon::today()->subDays(14))->get()->sortByDesc('created_at')->take($number_news);
 
         return $news;
     }
 
     public function listFields()
     {
-        $fields = Field::paginate(6, ['*'], 'fields_page');
+        $fields = Field::paginate(2, ['*'], 'fields_page');
 
         return $fields;
     }
@@ -38,7 +42,7 @@ class DataLayer
 
         $games = Game::whereDate('date', '>', Carbon::now())
             ->where('level', '>=', $user[0]->level)
-            ->where('owner_id', "!=", $user[0]->id)->paginate(6, ['*'], 'games_page');
+            ->where('owner_id', "!=", $user[0]->id)->paginate(3, ['*'], 'games_page');
 
         return $games;
     }
@@ -47,7 +51,7 @@ class DataLayer
     {
         $games = Game::where('date', '>=', Carbon::now())
             ->orderBy('date')->orderBy('time')
-            ->paginate(50, ['*'], 'games_page');
+            ->paginate(3, ['*'], 'games_page');
 
         return $games;
     }
@@ -265,6 +269,7 @@ class DataLayer
 
         $news->title = $title;
         $news->description = $description;
+        $news->updateTimestamps();
         $news->save();
     }
 
@@ -387,15 +392,15 @@ class DataLayer
     {
         $current_field = Field::find($idField);
 
-        if($name == $current_field->name) {
+        if ($name == $current_field->name) {
             return true;
         }
 
         $fields = Field::where('name', $name)
-        ->where('id', '!=', $idField)
-        ->get();
+            ->where('id', '!=', $idField)
+            ->get();
 
-        if(count($fields) > 0) {
+        if (count($fields) > 0) {
             return false;
         }
 

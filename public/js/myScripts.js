@@ -303,7 +303,7 @@ function checkNameField() {
         $.ajax({
             type: "GET",
             url: "/ajaxNomeCampo",
-            data: { name: name_value},
+            data: { name: name_value },
             success: function (response) {
                 console.log(response);
 
@@ -312,14 +312,16 @@ function checkNameField() {
                     error = false;
                 } else {
                     error = true;
-                    name_field_alert.html("Hai inserito un nome già esistente.");
+                    name_field_alert.html(
+                        "Hai inserito un nome già esistente."
+                    );
                 }
             },
         });
     }
 }
 
-function checkEditNameField(index, id_field) {
+function checkEditNameField(index, id_field) {
     // console.log("#nameField".concat(index));
     // console.log("#name-field-alert".concat(index));
     name_field = $("#nameField".concat(index));
@@ -329,8 +331,10 @@ function checkEditNameField(index, id_field) {
 
     error = false;
 
-    name_value = $("input[name=nameField]", "#editField".concat(index)).val().toLowerCase();
-    
+    name_value = $("input[name=nameField]", "#editField".concat(index))
+        .val()
+        .toLowerCase();
+
     console.log(name_field.val().trim().length);
 
     if (name_field.val().trim().length == 0) {
@@ -358,7 +362,9 @@ function checkEditNameField(index, id_field) {
                 if (response.available) {
                     $("#editField".concat(index)).submit();
                 } else {
-                    name_field_alert.html("Hai inserito un nome già esistente.");
+                    name_field_alert.html(
+                        "Hai inserito un nome già esistente."
+                    );
                 }
             },
         });
@@ -366,13 +372,13 @@ function checkEditNameField(index, id_field) {
 }
 
 function checkStrings() {
-    firstname = $('#name');
-    lastname = $('#lastname');
+    firstname = $("#name");
+    lastname = $("#lastname");
 
-    alert_msg_name = $('#alert_msg_name');
-    alert_msg_name.html('');
-    alert_msg_lastname = $('#alert_msg_lastname');
-    alert_msg_lastname.html('');
+    alert_msg_name = $("#alert_msg_name");
+    alert_msg_name.html("");
+    alert_msg_lastname = $("#alert_msg_lastname");
+    alert_msg_lastname.html("");
 
     error = false;
 
@@ -383,28 +389,41 @@ function checkStrings() {
 
     // console.log();
 
-    if(!firstname_value.match(regularExpressionName)) {
+    if (!firstname_value.match(regularExpressionName)) {
         error = true;
-        alert_msg_name.html('Attenzione! Hai inserito caratteri non supportati. Prova ad inserire un altro nome.');
+        alert_msg_name.html(
+            "Attenzione! Hai inserito caratteri non supportati. Prova ad inserire un altro nome."
+        );
     }
 
-    if(!lastname_value.match(regularExpressionName)) {
+    if (!lastname_value.match(regularExpressionName)) {
         error = true;
-        alert_msg_lastname.html('Attenzione! Hai inserito caratteri non supportati. Prova ad inserire un altro cognome.');
+        alert_msg_lastname.html(
+            "Attenzione! Hai inserito caratteri non supportati. Prova ad inserire un altro cognome."
+        );
     }
 
-    if(firstname_value.trim() == "") {
+    if (firstname_value.trim() == "") {
         error = true;
-        alert_msg_name.html('Attenzione! Campo obbligatorio');
+        alert_msg_name.html("Attenzione! Campo obbligatorio");
     }
 
-    if(lastname_value.trim() == "") {
+    if (lastname_value.trim() == "") {
         error = true;
-        alert_msg_lastname.html('Attenzione! Campo obbligatorio');
+        alert_msg_lastname.html("Attenzione! Campo obbligatorio");
     }
 
-    if(!error) {
+    if (!error) {
         $("form[name=registerForm]").submit();
     }
+}
+
+function collapseOthers() {
+    collapse_div = $("div.multi-collapse.show");
     
+    setTimeout(function() {
+        collapse_div.removeClass("show");
+    }, 150);
+    
+
 }

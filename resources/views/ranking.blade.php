@@ -113,7 +113,7 @@
               <td class="username">
                 <p class="m-0">
                   <a class="btn p-0" data-bs-toggle="collapse" role="button" aria-expanded="false"
-                    data-bs-target="#collapseUser{{$loop->index}}" aria-controls="collapseUser{{$loop->index}}">
+                    data-bs-target="#collapseUser{{$loop->index}}" aria-controls="collapseUser{{$loop->index}}" onclick="collapseOthers()">
                     {{ $user->username }}
                   </a>
                 </p>

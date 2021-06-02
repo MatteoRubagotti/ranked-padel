@@ -9,7 +9,7 @@
             </button>
         </h1>
         <div id="flush-collapseCampo" class="accordion-collapse collapse pt-4" aria-labelledby="flush-headingCampo"
-            data-bs-parent="#accordionFlushPrenotazioni">
+            data-bs-parent="#accordionFlushCampo">
             <form name="addCampo" method="post" action="{{ route('admin.aggiungiCampo') }}" id="addCampo">
                 @csrf
                 <div class="container">

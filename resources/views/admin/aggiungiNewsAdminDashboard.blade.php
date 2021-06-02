@@ -9,7 +9,7 @@
             </button>
         </h1>
         <div id="flush-collapseNews" class="accordion-collapse collapse pt-4" aria-labelledby="flush-headingNews"
-            data-bs-parent="#accordionFlushPrenotazioni">
+            data-bs-parent="#accordionFlushNews">
             <form name="addNews" method="post" action="{{ route('admin.aggiungiNovità') }}">
                 @csrf
                 <div class="container">

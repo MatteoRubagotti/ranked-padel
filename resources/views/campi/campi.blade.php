@@ -87,7 +87,7 @@
 
     <hr class="divider mt-4 mb-0 ms-0 ps-0">
 
-    <div class="row row-cols-12 mt-2 ps-5 pe-4" id="campi">
+    <div class="row row-cols-12 mt-2 ps-5 pe-4" id="fields_page">
       @foreach ($fields as $field)
       <div class="col-lg-4 col-sm-12 col-12 p-3">
         @if($field->available)

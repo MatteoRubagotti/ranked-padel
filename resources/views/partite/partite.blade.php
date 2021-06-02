@@ -86,7 +86,7 @@
 
     <hr class="divider mt-4 mb-0 ms-0 ps-0">
     
-    <div class="row row-cols-12 mt-2 ps-5 pe-4">
+    <div class="row row-cols-12 mt-2 ps-5 pe-4" id="games_page">
       @if(count($games) == 0)
         <h1 class="text-secondary text-center text-uppercase m-5 mx-auto"> <b>Non ci sono partite disponibili per te</b> </h1>
       @endif

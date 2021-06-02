@@ -61,8 +61,12 @@
                     </div>
 
                     <hr class="mt-5">
-                    
+
                     @include('admin.campiAdminDashboard')
+
+                    <hr class="">
+
+                    @include('admin.prenotazioniAdminDashboard')
 
                     <hr class="">
 
@@ -71,10 +75,6 @@
                     <hr class="">
 
                     @include('admin.aggiungiNewsAdminDashboard')
-
-                    <hr class="mb-4">
-
-                    @include('admin.prenotazioniAdminDashboard')
 
                     <hr>
 

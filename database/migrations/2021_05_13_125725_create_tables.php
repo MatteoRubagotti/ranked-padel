@@ -20,6 +20,7 @@ class CreateTables extends Migration
             $table->id()->autoIncrement();
             $table->string('title');
             $table->text('description');
+            $table->timestamps();
         });
 
         Schema::create('Field', function (Blueprint $table) {

@@ -25,7 +25,7 @@
 
     <link href='{{ url('/')}}/css/features.css' rel="stylesheet" type="text/css">
 
-    <!-- My CSS -->
+    <!-- My CSS & Custom JavaScript -->
     <link href='{{ url('/')}}/css/customCSS.css' rel="stylesheet" type="text/css">
     <script src="{{ url('/') }}/js/myScripts.js"></script>
 
