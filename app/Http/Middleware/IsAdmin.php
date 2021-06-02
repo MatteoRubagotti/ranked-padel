@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\DataLayer;
 
 class IsAdmin
 {
@@ -23,7 +24,8 @@ class IsAdmin
                 $request->routeIs('partite.partecipazione') ||
                 $request->routeIs('campi.prenota') ||
                 $request->routeIs('partite.partecipa') ||
-                $request->routeIs('user.dashboard')
+                $request->routeIs('user.dashboard') ||
+                $request->routeIs('partite')
             ) {
                 return $next($request);
             } else {
@@ -32,6 +34,9 @@ class IsAdmin
         }
 
         if (auth()->user()->is_admin == 1) {
+
+            $dl = new DataLayer();
+
             if ($request->routeIs('user.dashboard')) { // 
                 return Redirect::to(route('admin.dashboard'));
             }
@@ -40,7 +45,8 @@ class IsAdmin
                 $request->routeIs('campi.prenotazione') ||
                 $request->routeIs('partite.partecipazione') ||
                 $request->routeIs('campi.prenota') ||
-                $request->routeIs('partite.partecipa')
+                $request->routeIs('partite.partecipa') ||
+                $request->routeIs('partite')
             ) {
                 return abort(403, "ATTENZIONE! L'amministratore non può prenotare e/o partecipare alle partite!");
             }

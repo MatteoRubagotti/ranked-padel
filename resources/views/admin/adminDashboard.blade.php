@@ -28,13 +28,20 @@
                     </div>
                     @endif
 
+                    @if(session('msg_delete'))
+                    <div class="mt-1 mb-1 alert alert-danger alert-dismissible fade show text-center" role="alert">
+                        <b> {{ session('msg_delete') ?? '' }}
+                        </b>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
+
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
                                 <img src="{{ url('/')}}/svg/profile-admin.png" class="rounded mx-auto d-block"
                                     height="200" width="200" alt="Foto profilo">
-                                <h1 class="mt-3 mb-4 text-center text-uppercase font-weight-bold">{{$user->name}}
-                                    {{$user->lastname}}</h1>
+                                <h1 class="mt-3 mb-4 text-center text-uppercase font-weight-bold">{{$user->name}}</h1>
                             </div>
                         </div>
                     </div>

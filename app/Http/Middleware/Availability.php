@@ -71,6 +71,12 @@ class Availability
             return $next($request);
         }
 
+        $dl = new DataLayer();
+        
+        if($request->routeIs('admin.eliminaCampo') && $dl->fieldWithGames($request->route()->parameter('idField'))) {
+            return Redirect::to(route('admin.dashboard'))->with('msg_delete', 'Attenzione! Non puoi eliminare un campo che ha delle partite prenotate.');
+        }
+
         return $next($request);
     }
 }

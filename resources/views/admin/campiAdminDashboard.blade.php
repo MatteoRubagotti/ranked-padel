@@ -8,7 +8,9 @@
     <a class="list-group-item" aria-current="true">
 
         <div class="d-flex justify-content-end">
-            <form name="editField" method="post" action="{{ route('admin.modificaCampo', ['idField' => $field->id]) }}">
+
+            <form name="editField" method="post" action="{{ route('admin.modificaCampo', ['idField' => $field->id]) }}"
+                id="editField{{ $loop->index }}">
                 @csrf
                 <div class="me-0"><button type="button"
                         class="btn btn-outline-primary p-2 pt-0 pb-0 text-uppercase mt-2" data-bs-toggle="modal"
@@ -28,10 +30,14 @@
                             <div class="modal-body">
                                 <div class="container">
                                     <div class="mb-3">
-                                        <label for="nameField" class="form-label font-weight-bold">Nome campo</label>
+                                        <label for="nameField" class="form-label font-weight-bold">Nome campo
+                                        </label>
                                         <input type="text" name="nameField" class="form-control"
                                             id="nameField{{ $loop->index }}" placeholder="Nome del campo"
-                                            value="{{ $field->name }}" required>
+                                            value="{{ $field->name }}"
+                                            oninvalid="this.setCustomValidity('Campo obbligatorio')"
+                                            oninput="setCustomValidity('')" required>
+                                        <b><span id="name-field-alert{{ $loop->index }}" class="text-danger"></span></b>
                                     </div>
 
                                     <div class="mb-3 ms-4">
@@ -60,13 +66,17 @@
                             </div>
                             <div class="modal-footer justify-content-center">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                                <button type="submit" class="btn btn-primary text-uppercase">Modifica <i
-                                        class="ms-1 bi bi-pencil-square"></i></button>
+                                <button type="submit" class="btn btn-primary text-uppercase"
+                                    onclick="event.preventDefault(); checkEditNameField({{ $loop->index }}, {{ $field->id }})">Modifica
+                                    <i class="ms-1 bi bi-pencil-square"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
+
+            @include('admin.eliminaCampo')
+
         </div>
 
         <div class="d-flex w-100 mt-1 justify-content-center p-2 pt-0">

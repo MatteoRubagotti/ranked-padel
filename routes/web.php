@@ -28,6 +28,8 @@ Route::group(['middleware' => ['auth', 'check.games']], function () {
 
     Route::group(['middleware' => ['is_admin']], function () {
 
+        Route::get('/partite', 'GameController@showPartite')->name('partite');
+
         Route::get('/dashboard/user', [DashboardController::class, 'showUserDashboard'])->name('user.dashboard');
 
         Route::prefix('/dashboard/admin')->group(function () {
@@ -35,6 +37,7 @@ Route::group(['middleware' => ['auth', 'check.games']], function () {
             Route::post('/aggiungi-novità', [DashboardController::class, 'addNews'])->name('admin.aggiungiNovità');
             Route::post('/aggiungi-campo',  [DashboardController::class, 'addField'])->name('admin.aggiungiCampo');
             Route::post('/modifica-campo/{idField}',  [DashboardController::class, 'editField'])->name('admin.modificaCampo');
+            Route::delete('/elimina-campo/{idField}', [DashboardController::class, 'removeField'])->name('admin.eliminaCampo');
         });
 
         Route::group(['middleware' => ['available']], function () {
@@ -46,8 +49,6 @@ Route::group(['middleware' => ['auth', 'check.games']], function () {
 
         Route::get('/partite/{idGame}/partecipazione', 'GameController@partecipazionePartita')->name('partite.partecipazione');
     });
-
-    Route::get('/partite', 'GameController@showPartite')->name('partite');
 
     Route::prefix('/dashboard/user')->group(function () {
         Route::post('/{idGame}/eliminaPartita', 'DashboardController@eliminaPartita')->name('dashboard.eliminaPartita');
@@ -65,6 +66,7 @@ Route::get('/ajaxOrari', 'FieldController@ajaxCheckHoursAvailable');
 Route::get('/ajaxOrario', 'FieldController@ajaxCheckDateHour');
 Route::get('/ajaxEmail', 'DashboardController@ajaxCheckEmail');
 Route::get('/ajaxNomeCampo', 'FieldController@ajaxCheckNameField');
+Route::get('/ajaxModificaNomeCampo', 'FieldController@ajaxCheckEditNameField');
 
 
 // Debug

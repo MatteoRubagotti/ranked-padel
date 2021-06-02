@@ -97,7 +97,11 @@
     <h1 class="display-3 fw-bold pt-1 text-uppercase mb-2 text-light"><img src="{{ url('/')}}/svg/news-index.svg"
             width="60" height="60"> <b>Novità</b> </h1>
 </div>
-
+@if(count($news) == 0)
+<div class="col-lg-6 me-3 float-left mb-5 text-center pt-3 pb-5" id="news-div">
+    <h1 class="text-uppercase text-black-50"><i>Non ci sono novità ...</i></h1>
+</div>
+@else
 <div class="col-lg-6 me-3 float-left mb-5 ms-3" id="news-div">
     <div class="accordion" id="accordionNews">
         @foreach($news as $news)
@@ -135,5 +139,6 @@
         @endforeach
     </div>
 </div>
+@endif
 <!-- END NEWS -->
 @endsection

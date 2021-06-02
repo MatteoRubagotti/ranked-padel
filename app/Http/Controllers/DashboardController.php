@@ -70,7 +70,7 @@ class DashboardController extends Controller
 
         foreach ($userPastGames as $game) {
 
-            // Compute the number of win/lose
+            // Compute the number of wins/losts
             if ($game->pivot->result == 1) {
                 $wins++;
             }
@@ -93,7 +93,6 @@ class DashboardController extends Controller
                 $players = $dl->getNumberPlayersGame($game->id);
                 $playersPerUserPastGames[$game->id] = $players;
 
-                // TODO: I think it's OK!
                 foreach ($user->games as $game) {
                     $results[$game->id] = $game->pivot->result;
                 }
@@ -160,7 +159,7 @@ class DashboardController extends Controller
 
         $age = $request->input('age');
 
-        if($dl->updateProfileUser(Auth::id(), $email, $age)) {
+        if ($dl->updateProfileUser(Auth::id(), $email, $age)) {
             return Redirect::to(route('user.dashboard'))->with(['result_msg' => "Profilo aggiornato con successo!"]);
         }
     }
@@ -197,6 +196,7 @@ class DashboardController extends Controller
         $fieldsReservations = array();
         $players = array();
         $fields = array();
+        $fieldsDelete = array();
 
         foreach ($reservations as $game) {
             $fieldsReservations[$game->id] = $dl->getField($game->field_id);
@@ -205,6 +205,15 @@ class DashboardController extends Controller
 
         $fields = $dl->listFields();
 
+        foreach ($fields as $field) {
+            if ($dl->fieldWithGames($field->id)) {
+                $fieldsDelete[$field->id] = false;
+                continue;
+            }
+
+            $fieldsDelete[$field->id] = true;
+        }
+
         return view('admin.adminDashboard')
             ->with('user', Auth::user())
             ->with([
@@ -212,6 +221,7 @@ class DashboardController extends Controller
                 'fields' => $fieldsReservations,
                 'players' => $players,
                 'allFields' => $fields,
+                'fieldsDelete' => $fieldsDelete,
             ]);
     }
 
@@ -237,8 +247,17 @@ class DashboardController extends Controller
         $dl = new DataLayer();
 
         $dl->editField($idField, $request->input('nameField'), $request->input('available'), $request->input('indoor'));
-
+        
         return Redirect::to(route('admin.dashboard'))->with('msg_field', 'Campo modificato con successo!');
+    }
+
+    public function removeField($idField)
+    {
+        $dl = new DataLayer();
+
+        $dl->removeField($idField);
+
+        return Redirect::to(route('admin.dashboard'))->with('msg_field', 'Campo eliminato con successo!');
     }
 
     public function ajaxCheckEmail(Request $request)
@@ -248,10 +267,10 @@ class DashboardController extends Controller
         $email = $request->input('email');
 
         Debugbar::info($email);
-        
+
         $checked = $dl->checkEmail(Auth::id(), $email);
         $response = array('checked' => $checked);
-        
+
         return response()->json($response);
     }
 }

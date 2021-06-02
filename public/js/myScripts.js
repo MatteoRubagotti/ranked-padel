@@ -319,6 +319,52 @@ function checkNameField() {
     }
 }
 
+function checkEditNameField(index, id_field) {
+    // console.log("#nameField".concat(index));
+    // console.log("#name-field-alert".concat(index));
+    name_field = $("#nameField".concat(index));
+    name_field_alert = $("#name-field-alert".concat(index));
+
+    name_field_alert.html("");
+
+    error = false;
+
+    name_value = $("input[name=nameField]", "#editField".concat(index)).val().toLowerCase();
+    
+    console.log(name_field.val().trim().length);
+
+    if (name_field.val().trim().length == 0) {
+        name_field_alert.html("Nome obbligatorio. Non può essere vuoto!");
+        error = true;
+    }
+
+    if (name_field.val().trim().length > 20) {
+        name_field_alert.html(
+            "Nome del campo troppo lungo! Prova con un altro più corto."
+        );
+        error = true;
+    }
+
+    console.log(name_value);
+
+    if (!error) {
+        $.ajax({
+            type: "GET",
+            url: "/ajaxModificaNomeCampo",
+            data: { name: name_value, idField: id_field },
+            success: function (response) {
+                console.log(response);
+
+                if (response.available) {
+                    $("#editField".concat(index)).submit();
+                } else {
+                    name_field_alert.html("Hai inserito un nome già esistente.");
+                }
+            },
+        });
+    }
+}
+
 function checkStrings() {
     firstname = $('#name');
     lastname = $('#lastname');

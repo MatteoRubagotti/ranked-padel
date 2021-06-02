@@ -83,4 +83,17 @@ class FieldController extends Controller
 
         return response()->json($response);
     }
+
+    public function ajaxCheckEditNameField(Request $request)
+    {
+        $dl = new DataLayer();
+
+        if($dl->checkEditNameField($request->input('name'), $request->input('idField'))) {
+            $response = array("available" => true);
+        } else {
+            $response = array("available" => false);
+        }
+
+        return response()->json($response);
+    }
 }

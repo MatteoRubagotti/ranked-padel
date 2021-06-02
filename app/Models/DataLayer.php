@@ -150,17 +150,11 @@ class DataLayer
 
         $userGames = $user->games(); // Game_users (pivot) table
 
-        //dd($userGames);
-
-        /*dd($userGames->where('users_id', $idUser)
-            ->where('date', '<=', Carbon::now())
-            ->orderBy('date')->orderBy('time')->get());*/
-
         $userGames = $userGames->where('users_id', $idUser)
             ->where('date', '<=', Carbon::now())
             ->orderBy('date')->orderBy('time')->paginate(5, ['*'], 'userPastGames_page');
 
-        //dd($userGames);
+        Debugbar::info($userGames);
 
         return $userGames;
     }
@@ -171,17 +165,9 @@ class DataLayer
 
         $userGames = $user->games(); // Game_users (pivot) table
 
-        //dd($userGames);
-
-        /*dd($userGames->where('users_id', $idUser)
-            ->where('date', '<=', Carbon::now())
-            ->orderBy('date')->orderBy('time')->get());*/
-
         $userGames = $userGames->where('users_id', $idUser)
             ->where('date', '<=', Carbon::now())
             ->orderBy('date')->orderBy('time')->get();
-
-        //dd($userGames);
 
         return $userGames;
     }
@@ -367,7 +353,8 @@ class DataLayer
         return false;
     }
 
-    public function checkNameField($nameField) {
+    public function checkNameField($nameField)
+    {
         $field = Field::where('name', $nameField)->get();
 
         Debugbar::info($field);
@@ -377,5 +364,41 @@ class DataLayer
         }
 
         return false;
+    }
+
+    public function fieldWithGames($idField)
+    {
+        $games = Game::where('field_id', $idField)
+            ->get();
+
+        if (count($games) != 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function removeField($idField)
+    {
+        Field::find($idField)->delete();
+    }
+
+    public function checkEditNameField($name, $idField)
+    {
+        $current_field = Field::find($idField);
+
+        if($name == $current_field->name) {
+            return true;
+        }
+
+        $fields = Field::where('name', $name)
+        ->where('id', '!=', $idField)
+        ->get();
+
+        if(count($fields) > 0) {
+            return false;
+        }
+
+        return true;
     }
 }

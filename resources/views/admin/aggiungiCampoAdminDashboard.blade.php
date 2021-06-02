@@ -14,7 +14,7 @@
                 @csrf
                 <div class="container">
                     <div class="mb-3">
-                        <label for="nameField" class="form-label font-weight-bold">Nome campo</label>
+                        <label for="nameField" class="form-label font-weight-bold">Nome</label>
                         <input type="text" name="nameField" class="form-control" id="nameField"
                             placeholder="Nome del campo" oninvalid="this.setCustomValidity('Campo obbligatorio')"
                             oninput="setCustomValidity('')" autofocus required>
