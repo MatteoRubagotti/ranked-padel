@@ -420,10 +420,43 @@ function checkStrings() {
 
 function collapseOthers() {
     collapse_div = $("div.multi-collapse.show");
-    
-    setTimeout(function() {
+
+    setTimeout(function () {
         collapse_div.removeClass("show");
     }, 150);
-    
+}
 
+function getWeather() {
+    var url =
+            "http://api.weatherapi.com/v1/forecast.json?key=2bccac77ee8c46e4a00163655210806&q=Brescia&lang=it&days=3&aqi=no&alerts=no";
+
+    $.getJSON(url, function (response) {
+        var location = response.location.name;
+        var region = response.location.region;
+
+        var days = response.forecast.forecastday; // Array [0 => JSON_Date0, 1 => JSON_Date1, 2 => JSON_Date2]
+        icons = [];
+        dates = [];
+        // console.log(days);
+
+        days.forEach((element, index) => {
+            icons[index] = element.day.condition.icon;
+            dates[index] = element.date;
+        });
+        // console.log(dates);
+
+        for (var i = 0; i < icons.length; i++) {
+            http = "http:";
+            icons[i] = http.concat(icons[i]);
+        }
+        // console.log(icons);
+
+        days.forEach((element, index) => {
+            $("#img-day".concat(index)).attr("src", icons[index]);
+            // console.log(dates[index]);
+            $("#date-day".concat(index)).html(dates[index].concat('<i class="bi bi-calendar-event-fill ms-3"></i>'));
+            $("#list-day".concat(index).concat("-list")).html(index == 0 ? ("Oggi • ").concat(dates[index]) : dates[index]);
+            $(".location-name").html(region.concat(" - ").concat(location).concat("<i class='bi bi-geo-fill ms-2'></i>"));
+        });
+    });
 }

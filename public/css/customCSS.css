@@ -380,9 +380,9 @@ span.input-group-text {
     margin-left: auto !important;
 }
 
-.list-group-item:hover {
+/* .list-group-item:hover {
     background-color: rgb(233, 233, 233);
-}
+} */
 
 .accordion-body-custom {
     max-height: 300px;
@@ -395,4 +395,9 @@ span.input-group-text {
 
 #ranking-table_paginate {
     margin-top: 15px;
+}
+
+/* Weather custom */
+.list-group-item.active:hover {
+    background-color: none !important;
 }
