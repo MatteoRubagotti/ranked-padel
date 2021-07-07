@@ -9,7 +9,7 @@ function checkDate(idField) {
 
     var input_date = new Date($("#date-picker").val());
 
-    if (!isValidDate(input_date)) {
+    if (!dateIsValid(input_date)) {
         date_invalid_msg.html("Inserisci una data valida.");
     }
 
@@ -21,7 +21,7 @@ function checkDate(idField) {
 
     var today = new Date().toISOString().slice(0, 10);
 
-    console.log(date);
+    // console.log(date);
 
     var error = false;
 
@@ -96,7 +96,7 @@ function checkDate(idField) {
     }
 }
 
-function isValidDate(d) {
+function dateIsValid(d) {
     return d instanceof Date && !isNaN(d);
 }
 
@@ -112,7 +112,7 @@ function checkHour(idField) {
 
     var input_date = new Date($("#date-picker").val());
 
-    if (!isValidDate(input_date)) {
+    if (!dateIsValid(input_date)) {
         date_invalid_msg.html("Inserisci una data valida.");
     }
 
@@ -192,7 +192,7 @@ function editUserProfile() {
 
     console.log(email_value);
 
-    var regularExpressionAge = new RegExp("^(([1-9][0-9]){0,2})$", "g"); // Age must be two digits at most
+    var regularExpressionAge = new RegExp("^(([1-9][0-9]){0,2})$", "g"); // Age must be two digits at most (i.e. < 100)
 
     // var regularExpressionEmail = new RegExp("^[^s@]+@[^s@]+\.[^s@]+$", "g");
     var regularExpressionEmail = new RegExp(
@@ -454,9 +454,9 @@ function getWeather() {
         days.forEach((element, index) => {
             $("#img-day".concat(index)).attr("src", icons[index]);
             // console.log(dates[index]);
-            $("#date-day".concat(index)).html(dates[index].concat('<i class="bi bi-calendar-event-fill ms-3"></i>'));
+            $("#date-day".concat(index)).html(dates[index].concat('<i class="bi bi-calendar-event ms-3"></i>'));
             $("#list-day".concat(index).concat("-list")).html(index == 0 ? ("Oggi • ").concat(dates[index]) : dates[index]);
-            $(".location-name").html(region.concat(" - ").concat(location).concat("<i class='bi bi-geo-fill ms-2'></i>"));
+            $(".location-name").html(region.concat(" - ").concat(location).concat("<i class='bi bi-geo ms-2'></i>"));
         });
     });
 }

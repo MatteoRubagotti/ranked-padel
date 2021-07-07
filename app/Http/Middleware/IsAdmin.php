@@ -48,7 +48,7 @@ class IsAdmin
                 $request->routeIs('partite.partecipa') ||
                 $request->routeIs('partite')
             ) {
-                return abort(403, "ATTENZIONE! L'amministratore non può prenotare e/o partecipare alle partite!");
+                return abort(403, "ATTENZIONE! L'amministratore non può effettuare prenotazioni e/o partecipare alle partite!");
             }
 
             return $next($request);

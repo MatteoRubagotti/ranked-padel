@@ -1,7 +1,7 @@
 <h1 class="text-uppercase text-primary text-center display-6 font-weight-bold mb-4 mt-4"><b>Le mie
         prenotazioni</b></h1>
 
-<div class="list-group offset-lg-1 col-lg-7 col-md-9 col-sm-11 col-12 ms-2 ms-sm-auto me-sm-auto" id="reservations_page">
+<div class="list-group offset-lg-1 col-lg-7 col-md-9 col-sm-11 col-12 ms-2 ms-sm-auto me-sm-auto" id="reservations-section">
 
     @foreach($reservations as $reservation)
 
@@ -103,6 +103,6 @@
 
     @endforeach
 
-    <div class="container mt-3"> {{ $reservations->appends(['pageName' => 'reservations_page'])->links() }} </div>
+    <div class="container mt-3"> {{ $reservations->appends(['pageName' => 'reservations-section'])->links() }} </div>
 
 </div>

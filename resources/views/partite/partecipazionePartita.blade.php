@@ -17,8 +17,8 @@
     Trova
   </a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-    <li><a class="dropdown-item active" href="{{route('campi')}}">Campo</a></li>
-    <li><a class="dropdown-item" href="{{route('partite')}}">Partita</a></li>
+    <li><a class="dropdown-item" href="{{route('campi')}}">Campo</a></li>
+    <li><a class="dropdown-item active" href="{{route('partite')}}">Partita</a></li>
   </ul>
 </li>
 <li class="nav-item">
@@ -58,8 +58,8 @@
 
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-<li class="breadcrumb-item"><a href="{{route('campi')}}">Trova Campo</a></li>
-<li class="breadcrumb-item active" aria-current="page">Prenotazione Campo</li>
+<li class="breadcrumb-item"><a href="{{route('partite')}}">Trova Partita</a></li>
+<li class="breadcrumb-item active" aria-current="page">Partecipa</li>
 @endsection
 
 @section('corpo')

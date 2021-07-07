@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'admin',
             'name' => 'Amministratore',
             'lastname' => 'Administrator',
-            'email' => 'admin@admin.com',
+            'email' => 'admin@rankedpadel.com',
             'password' => Hash::make('admin'),
             'is_admin' => 1,
             'email_verified_at' => now(),

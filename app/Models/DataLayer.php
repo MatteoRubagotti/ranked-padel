@@ -28,7 +28,7 @@ class DataLayer
 
     public function listFields()
     {
-        $fields = Field::paginate(2, ['*'], 'fields_page');
+        $fields = Field::paginate(3, ['*'], 'fields_page');
 
         return $fields;
     }
@@ -123,7 +123,7 @@ class DataLayer
     {
         $reservations = Game::where('owner_id', $idUser)
             ->where('date', '>', Carbon::now())
-            ->orderBy('date')->orderBy('time')->paginate(5, ['*'], 'reservations_page');
+            ->orderBy('date')->orderBy('time')->paginate(5, ['*'], 'reservations-section');
 
         //dd($reservations);
 
@@ -141,7 +141,7 @@ class DataLayer
         $userGames = $userGames->where('users_id', $idUser)
             ->where('owner_id', '!=', $idUser)
             ->where('date', '>', Carbon::now())
-            ->orderBy('date')->orderBy('time')->paginate(5, ['*'], 'userGames_page');
+            ->orderBy('date')->orderBy('time')->paginate(5, ['*'], 'userGames-section');
 
         //dd($userGames);
 
@@ -156,7 +156,7 @@ class DataLayer
 
         $userGames = $userGames->where('users_id', $idUser)
             ->where('date', '<=', Carbon::now())
-            ->orderBy('date')->orderBy('time')->paginate(5, ['*'], 'userPastGames_page');
+            ->orderBy('date')->orderBy('time')->paginate(5, ['*'], 'userPastGames-section');
 
         Debugbar::info($userGames);
 

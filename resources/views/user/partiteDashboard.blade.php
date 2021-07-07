@@ -55,7 +55,7 @@
         </form>
 
     </div>
-    <div class="mb-1 text-uppercase font-weight-bold">
+    <div class="mb-1 text-uppercase font-weight-bold" id="userGames-section">
 
         <div class="d-flex w-100 justify-content-between">
             <div>
@@ -89,7 +89,7 @@
 
 @endforeach
 
-<div class="container mt-3"> {{ $userGames->appends(['pageName' => 'userGames_page'])->links() }} </div>
+<div class="container mt-3"> {{ $userGames->appends(['pageName' => 'userGames-section'])->links() }} </div>
 
 </div>
 
@@ -160,7 +160,7 @@
         </form>
 
     </div>
-    <div class="mb-1 text-uppercase font-weight-bold">
+    <div class="mb-1 text-uppercase font-weight-bold" id="userPastGames-section">
 
         <div class="d-flex w-100 justify-content-between">
             <div>
@@ -205,6 +205,6 @@
 @endif
 @endforeach
 
-<div class="container mt-3"> {{ $userPastGames->appends(['pageName' => 'userPastGames_page'])->links() }} </div>
+<div class="container mt-3"> {{ $userPastGames->appends(['pageName' => 'userPastGames-section'])->links() }} </div>
 
 </div>
