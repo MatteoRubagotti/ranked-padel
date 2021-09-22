@@ -7,6 +7,54 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Installation
+
+### Requirements
+
+- PHP Version ≥ 7.4
+- Web Server: Apache or Nginx
+- Database: MySQL
+
+**Important**: If you have not yet installed Composer: <a href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx">Installation - Linux / Unix / OSX</a>
+
+### Git Clone
+**Attention**: Support for password authentication was removed on August 13, 2021. *Please use a **personal access token** (**PAT**) instead*.
+<a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token">Creating a personal access token</a>
+
+```console
+$ git clone https://github.com/MatteoRubagotti/ranked-padel.git
+$ Username for 'https://github.com': username
+$ Password for 'https://username@github.com': personalAccessToken
+$ cd ranked-padel
+```
+Run the ```update``` command to download and install automatically all dependencies:
+
+```console
+$ composer update
+```
+
+### Configuration
+**Remember**: Create the database on your *MySQLServer* with the name and user (with all privileges) below before run ```artisan``` command.
+
+~~~sql
+DB_NAME=RankedPadelDB
+DB_USERNAME=root
+DB_PASSWORD=root
+~~~
+
+
+The ```migrate:fresh``` command will drop all tables from the database and then execute the ```migrate``` command:
+
+```console
+$ php artisan migrate:fresh --seed
+```
+
+Start Laravel's local development server using the ```serve``` command:
+
+```console
+$ php artisan serve
+```
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
