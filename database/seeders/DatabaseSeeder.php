@@ -37,14 +37,14 @@ class DatabaseSeeder extends Seeder
             'lastname' => 'Rubagotti',
             'email' => 'matteo@admin.com',
             'password' => Hash::make('1'),
-            'age' => 23,
+            'age' => 24,
             'hand' => 'dx',
             'sex' => 'm',
             'level' => '0',
             'email_verified_at' => now(),
         ]);
 
-        DB::table('users')->insert([
+        /*DB::table('users')->insert([
             'username' => 'prova',
             'name' => 'Nome',
             'lastname' => 'Cognome',
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
             'sex' => 'f',
             'level' => '1',
             'email_verified_at' => now(),
-        ]);
+        ]);*/
 
         DB::table('Field')->insert([
             'name' => "Campo verde",
@@ -81,9 +81,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $dl = new DataLayer();
-        
+
         // Start from $i = 2 because id = 1 is the admin, who cannot subscribe to games
-        for ($i = 2; $i <= 16; $i++) {
+        for ($i = 2; $i <= 30; $i++) {
             Game::factory(1)->hasAttached(User::factory(1), ['users_id' => $i])->create(["owner_id" => $i]); // Add automatically the owner_id to the game's subscribers
             $game = Game::where('owner_id', $i)->first();
             $game->level = User::find($i)->level;
@@ -91,7 +91,7 @@ class DatabaseSeeder extends Seeder
             $game->save();
         }
 
-        for ($i = 1; $i <= 5; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             $game = Game::find($i);
 
             // Add random players (max players added are 3) to available games randomly
@@ -112,19 +112,33 @@ class DatabaseSeeder extends Seeder
         }
 
         // Generate matches already played with 4 players in order to record the result in user dashboard
-        for ($i = 5; $i < 15; $i++) {
-
+        for ($i = 10; $i < 20; $i++) {
             for ($j = 2; $j <= 4; $j++) {
+                if (Game::where('owner_id', $j)->first() != null)
+                {
                     DB::table('Game_users')->insert([
-                        'game_id' => $i,
-                        'users_id' => $j,
-                        'result' =>  -1,
+                    'game_id' => $i,    
+                    'users_id' => $j,
+                    'result' =>  -1,
                     ]);
+                }
             }
 
+            $random_day = random_int(10, 30);
+            $random_date = "2021-09-" . strval($random_day);
+
             DB::table('Game')->where('id', $i)->update([
-                'date' => '2020-01-01',
+                'date' => $random_date,
             ]);
+        }
+
+        // Update matches already played with a random result
+        for ($i = 10; $i < 15; $i++) { // game_id
+            for ($j = 2; $j <= 4; $j++) { // users_id
+                DB::table('Game_users')->where('game_id', $i)->update([
+                    'result' =>  random_int(0, 1), // Update result of the match randomly 
+                ]);
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ class GameFactory extends Factory
     {   
         return [
             'level' => random_int(0,3),
-            'date' => $this->faker->date('2021-10-d'),
+            'date' => $this->faker->date('2021-12-d'),
             'time' => $this->faker->time(random_int(8,18) . ':00:00'),
             'owner_id' => random_int(1,11),
             'field_id' => random_int(1,3),

@@ -14,7 +14,7 @@ class PageController extends Controller
         $dl = new DataLayer();
         $news = $dl->listNews();
 
-        Debugbar::info($news);
+        // Debugbar::info($news);
 
         return view('index')->with('news', $news);
     }

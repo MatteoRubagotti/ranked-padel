@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,7 @@ Route::group(['middleware' => ['auth', 'check.games', 'verified']], function () 
         Route::post('/aggiornaProfilo', 'DashboardController@aggiornaProfilo')->name('user.aggiornaProfilo');
     });
 });
+
 // Laravel UI Authentication (Scaffold)
 Auth::routes(['verify' => true]);
 
