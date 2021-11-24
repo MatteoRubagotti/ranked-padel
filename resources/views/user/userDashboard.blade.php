@@ -6,7 +6,7 @@
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">
-                        <h1 class="text-uppercase text-success text-center display-1 font-weight-bolder"><b>Dashboard</b>
+                        <h1 class="text-uppercase text-success text-center display-1 font-weight-bolder"><b>Area personale</b>
                         </h1>
                     </div>
                     <div class="card-body">
@@ -48,14 +48,15 @@
 
                         <hr class="mb-3">
 
-
-                        <div class="">
-                            <span class="position-absolute end-0 me-3 mb-2"> <button class="btn btn-primary text-uppercase text-white"
-                                    type="button" onclick="enableEditUserProfile()">Aggiorna dati
-                                    <i class="ms-2 bi bi-pencil-square"> </button></span>
+                        <div class="container col-12 mb-5 mx-auto pb-3">
+                            <span class="position-absolute end-0 me-3"> <button
+                                    class="btn btn-primary text-uppercase text-white" type="button"
+                                    onclick="enableEditUserProfile()">Aggiorna dati <i class="bi bi-pencil-square"></i>
+                                </button>
+                            </span>
                         </div>
 
-                        <div class="container">
+                        <div class="container col-12 mt-5">
                             <form name="edit-profile" method="post" action="{{ route('user.aggiornaProfilo') }}"
                                 id="edit-profile" class="needs-validation" novalidate>
                                 @csrf
@@ -71,15 +72,16 @@
 
                                     <div class="input-group col-lg-5 col-11">
                                         <span class="input-group-text bg-light rounded">E-mail</span>
-                                        <input type="text" class="form-control disabled text-center"
+                                        <input type="text" class="form-control disabled text-center font-weight-bold"
                                             placeholder="{{ $user->email }}" value="{{ $user->email }}"
                                             aria-label="E-mail" id="email-dashboard" name="email" disabled>
+                                        <div class="font-weight-bold col-12">
+                                            <div id="email-alert" class="mt-2 text-center text-danger"></div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <b>
-                                    <div id="email-alert" class="text-center text-danger"></div>
-                                </b>
+
+                                </div>
 
                                 <div class="input-group mt-5 mb-3 justify-content-center">
                                     <span class="input-group-text bg-light ps-3 pe-3 rounded">Sesso</span>
@@ -104,7 +106,8 @@
                                     <span
                                         class="col-2 col-sm-3 col-md-1 mt-4 mt-sm-4 ms-4 ms-sm-5 mt-md-0 input-group-text bg-light ps-md-3 pe-md-3 rounded justify-content-center">Età</span>
                                     <span class="col-2 col-sm-2 col-md-1 mt-4 p-0 mt-sm-4 mt-md-0"><input id="age-dashboard"
-                                            type="text" class="form-control disabled text-uppercase text-center"
+                                            type="text"
+                                            class="form-control disabled text-uppercase text-center font-weight-bold"
                                             placeholder="{{ $user->age }}" name="age" value="{{ $user->age }}"
                                             aria-label="Age" disabled></span>
                                 </div>

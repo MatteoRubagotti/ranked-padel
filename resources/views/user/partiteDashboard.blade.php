@@ -47,10 +47,13 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="modal-footer justify-content-center">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Annulla</button>
-                                    <button type="submit" class="btn btn-danger text-uppercase">Elimina</button>
+                                <div class="modal-footer flex-start">
+                                    <span class="mx-auto">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                                    </span>
+                                    <span class="mx-auto">
+                                        <button type="submit" class="btn btn-danger text-uppercase">Elimina</button>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +90,7 @@
                         @endif --}}
                         <span class="mt-3 ps-0 pe-2" style="font-size: 18px"> <i class="bi bi-people me-1 ms-2"
                                 style="font-size: 16px;""></i>
-                        Giocatori: <span class="  font-weight-normal">
+                        Giocatori: <span class="   font-weight-normal">
                                 {{ $playersUserGames[$game->id] }}/4 </span>
                         </span>
                     </div>
@@ -120,14 +123,14 @@
                         action="{{ route('dashboard.aggiornaRisultato', ['idGame' => $game->id]) }}">
                         @csrf
                         @if ($results[$game->id] == 0 || $results[$game->id] == 1)
-                            <button type="button" class="btn bg-success text-white p-2 pt-0 pb-0 text-uppercase"
+                            <button type="button" class="btn bg-success text-white p-2 text-uppercase"
                                 data-bs-toggle="modal" data-bs-target="#updateResult{{ $loop->index }}" style="">
-                                Aggiorna risultato <i class="bi bi-pencil-square"></i>
+                                Modifica risultato<i class="ms-2 bi bi-pencil-square"></i>
                             </button>
                         @else
-                            <button type="button" class="btn bg-success text-white p-2 pt-0 pb-0 text-uppercase"
+                            <button type="button" class="btn bg-success text-white p-2 text-uppercase"
                                 data-bs-toggle="modal" data-bs-target="#updateResult{{ $loop->index }}" style="">
-                                Aggiungi risultato <i class="bi bi-plus-circle-fill"></i>
+                                Aggiungi risultato <i class="ms-2 bi bi-plus-circle-fill"></i>
                             </button>
                         @endif
 

@@ -15,8 +15,9 @@
                     action="{{ route('dashboard.eliminaPrenotazione', ['idGame' => $reservation->id]) }}">
                     @csrf
                     @if ($players[$reservation->id] > 1)
-                        <div data-bs-toggle="tooltip" title="Prenotazione non cancellabile, ci sono altri giocatori iscritti!" data-bs-placement="top"
-                            id="reservation-not-removable{{ $loop->index }}">
+                        <div data-bs-toggle="tooltip"
+                            title="Prenotazione non cancellabile, ci sono altri giocatori iscritti!"
+                            data-bs-placement="top" id="reservation-not-removable{{ $loop->index }}">
                             <script>
                                 var index = JSON.parse("{{ json_encode($loop->index) }}");
                                 var element = document.getElementById('reservation-not-removable'.concat(index));
@@ -36,7 +37,8 @@
                             X
                         </button> --}}
                         <button type="button" class="btn bg-danger text-white p-2 pt-0 pb-0 mt-2 ms-2"
-                            data-bs-toggle="modal" data-bs-target="#confirmDelete{{ $loop->index }}" style=""> CANCELLA
+                            data-bs-toggle="modal" data-bs-target="#confirmDelete{{ $loop->index }}" style="">
+                            CANCELLA
                             <i class="bi bi-trash"></i>
                         </button>
                     @endif
@@ -66,10 +68,14 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="modal-footer justify-content-center">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Annulla</button>
-                                    <button type="submit" class="btn btn-danger text-uppercase">Elimina</button>
+                                <div class="modal-footer flex-start">
+                                    <span class="mx-auto">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                                    </span>
+                                    <span class="mx-auto">
+                                        <button type="submit" class="btn btn-danger text-uppercase">Elimina</button>
+                                    </span>
+
                                 </div>
                             </div>
                         </div>
@@ -98,11 +104,11 @@
                                     {{ $players[$reservation->id] }}/4 </span>
                             </span> --}}
                         {{-- @elseif($players[$reservation->id] == 1) --}}
-                            <span class="mt-1 ps-0 pe-2 rounded" style="font-size: 18px"> <i
-                                    class="bi bi-people me-1 ms-2" style="font-size: 16px;""></i>
-                                Giocatori: <span class="font-weight-normal">
-                                    {{ $players[$reservation->id] }}/4 </span>
-                            </span>
+                        <span class="mt-1 ps-0 pe-2 rounded" style="font-size: 18px"> <i class="bi bi-people me-1 ms-2"
+                                style="font-size: 16px;""></i>
+                                Giocatori: <span class="  font-weight-normal">
+                                {{ $players[$reservation->id] }}/4 </span>
+                        </span>
                         {{-- @else
                             <span class="mt-1 pb-2 pe-3"> <i
                                     class="bi bi-people me-1 ms-2" style="font-size: 16px;"></i>

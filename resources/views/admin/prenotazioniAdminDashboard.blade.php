@@ -16,22 +16,20 @@
                     <h5>{{$fields[$reservation->id]->name}}</h5>
 
                     @if($fields[$reservation->id]->indoor)
-                    <i class="bi bi-umbrella me-1 ms-2"></i>
-                    <span class="text-uppercase font-weight-normal"> <i>Coperto</i></span>
+                    <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
                     @else
-                    <i class="bi bi-brightness-high me-1 ms-2"></i>
-                    <span class="text-uppercase font-weight-normal"> <i>Scoperto</i></span>
+                    <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
                     @endif
                 </div>
 
                 <div class="mt-3" style="text-align: center; vertical-align: middle;">
-                    @if($players[$reservation->id] == 4)
-                    <span class="mt-1 badge bg-secondary rounded-pill pb-2 pe-3"> <i class="bi bi-people me-1 ms-2"
+                    {{-- @if($players[$reservation->id] == 4) --}}
+                    <span class="mt-1 pb-2 pe-3"> <i class="bi bi-people me-1 ms-2"
                             style="font-size: 16px;"></i>
                         Giocatori: <span class="font-weight-normal">
                             {{ $players[$reservation->id] }}/4 </span>
                     </span>
-                    @elseif($players[$reservation->id] == 1)
+                    {{-- @elseif($players[$reservation->id] == 1)
                     <span class="mt-1 badge bg-success rounded-pill pb-2 pe-3"> <i class="bi bi-people me-1 ms-2"
                             style="font-size: 16px;"></i>
                         Giocatori: <span class="font-weight-normal">
@@ -43,7 +41,7 @@
                         Giocatori: <span class="font-weight-normal">
                             {{ $players[$reservation->id] }}/4 </span>
                     </span>
-                    @endif
+                    @endif --}}
                 </div>
             </div>
         </div>

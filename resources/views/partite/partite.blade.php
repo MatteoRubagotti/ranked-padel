@@ -91,8 +91,12 @@
 
             <div class="row row-cols-12 mt-2 ps-5 pe-4" id="games_page">
                 @if (count($games) == 0)
-                    <h1 class="text-secondary text-center text-uppercase m-5 mx-auto"> <b>Non ci sono partite disponibili
-                            per te</b> </h1>
+                    <h1 class="text-secondary text-center text-uppercase mt-3 mb-2">
+                        <b>Non ci sono partite disponibili per il tuo livello!</b>
+                    </h1>
+                    <span class="text-center mt-3"><button type="button"
+                            class="center btn btn-outline-success text-uppercase btn-lg px-4 me-md-2 fw-bold col-lg-5 col-md-4 ms-lg-5">
+                            <a href="{{ route('campi') }}">Crea una nuova partita ora!</a></button> </span>
                 @endif
 
                 @foreach ($games as $game)
@@ -134,7 +138,7 @@
                           @elseif($playersPerGame[$game->id] <= 3) <i class="bi bi-circle-fill"
                             style="color: orange; font-size: 25px"></i>
                             @else <i class="bi bi-circle-fill" style="color: red; font-size: 25px"></i>@endif --}}
-                            
+
                                     </li>
                                     <li class="d-flex align-items-center me-3" style="color: white;">
                                         <i class="bi bi-clock me-2" style="font-size: 20px;"></i> {{ $game->time }}
