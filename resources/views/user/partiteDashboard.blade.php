@@ -41,11 +41,9 @@
                                         <h5>{{ $fieldsUserGames[$game->id]->name }}</h5>
 
                                         @if ($fieldsUserGames[$game->id]->indoor)
-                                            <i class="bi bi-umbrella me-1 ms-2"></i>
-                                            <span class="text-uppercase font-weight-normal"> <i>Coperto</i></span>
+                                            <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
                                         @else
-                                            <i class="bi bi-brightness-high me-1 ms-2"></i>
-                                            <span class="text-uppercase font-weight-normal"> <i>Scoperto</i></span>
+                                            <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
                                         @endif
                                     </div>
                                 </div>
@@ -67,16 +65,14 @@
                         <h5>{{ $fieldsUserGames[$game->id]->name }}</h5>
 
                         @if ($fieldsUserGames[$game->id]->indoor)
-                            <i class="bi bi-umbrella me-1 ms-2"></i>
-                            <span class="text-uppercase font-weight-normal"> <i>Coperto</i></span>
+                            <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
                         @else
-                            <i class="bi bi-brightness-high me-1 ms-2"></i>
-                            <span class="text-uppercase font-weight-normal"> <i>Scoperto</i></span>
+                            <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
                         @endif
                     </div>
 
                     <div class="mt-3" style="text-align: center; vertical-align: middle;">
-                        @if ($playersUserGames[$game->id] == 4)
+                        {{-- @if ($playersUserGames[$game->id] == 4)
                             <span class="mt-1 badge bg-secondary rounded-pill pb-2 pe-3"> <i
                                     class="bi bi-people me-1 ms-2" style="font-size: 16px;"></i>
                                 Giocatori: <span class="font-weight-normal"> {{ $playersUserGames[$game->id] }}/4
@@ -88,7 +84,12 @@
                                 Giocatori: <span class="font-weight-normal"> {{ $playersUserGames[$game->id] }}/4
                                 </span>
                             </span>
-                        @endif
+                        @endif --}}
+                        <span class="mt-3 ps-0 pe-2" style="font-size: 18px"> <i class="bi bi-people me-1 ms-2"
+                                style="font-size: 16px;""></i>
+                        Giocatori: <span class="  font-weight-normal">
+                                {{ $playersUserGames[$game->id] }}/4 </span>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -149,11 +150,9 @@
                                             </h5>
 
                                             @if ($fieldsUserPastGames[$game->id]->indoor)
-                                                <i class="bi bi-umbrella me-1 ms-2"></i>
-                                                <span class="text-uppercase font-weight-normal"> <i>Coperto</i></span>
+                                                <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
                                             @else
-                                                <i class="bi bi-brightness-high me-1 ms-2"></i>
-                                                <span class="text-uppercase font-weight-normal"> <i>Scoperto</i></span>
+                                                <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
                                             @endif
                                         </div>
                                     </div>
@@ -178,16 +177,15 @@
                             <h5>{{ $fieldsUserPastGames[$game->id]->name }}</h5>
 
                             @if ($fieldsUserPastGames[$game->id]->indoor)
-                                <i class="bi bi-umbrella me-1 ms-2"></i>
-                                <span class="text-uppercase font-weight-normal"> <i>Coperto</i></span>
+                                <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
                             @else
                                 <i class="bi bi-brightness-high me-1 ms-2"></i>
-                                <span class="text-uppercase font-weight-normal"> <i>Scoperto</i></span>
+                                <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
                             @endif
                         </div>
 
                         <div class="mt-3" style="text-align: center; vertical-align: middle;">
-                            @if ($playersPerUserPastGames[$game->id] == 4)
+                            {{-- @if ($playersPerUserPastGames[$game->id] == 4)
                                 <span class="mt-1 badge bg-secondary rounded-pill pb-2 pe-3"> <i
                                         class="bi bi-people me-1 ms-2" style="font-size: 16px;"></i>
                                     Giocatori: <span class="font-weight-normal">
@@ -199,7 +197,7 @@
                                     Giocatori: <span class="font-weight-normal">
                                         {{ $playersPerUserPastGames[$game->id] }}/4 </span>
                                 </span>
-                            @endif
+                            @endif --}}
                         </div>
                     </div>
                     <div class="mt-2 font-weight-bold">
@@ -211,8 +209,6 @@
                             <span class="text-danger font-weight-bolder">Sconfitta</span>
                         @endif
                     </div>
-
-
                 </div>
             </a>
         @endif

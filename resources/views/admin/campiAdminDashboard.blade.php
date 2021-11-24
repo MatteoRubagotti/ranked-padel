@@ -47,8 +47,8 @@
                                             <input class="form-check-input" type="checkbox" value="1"
                                                 id="checkIndoor{{ $loop->index }}" name="indoor" @if ($field->indoor) checked
     @endif>
-    <label class="form-check-label" for="checkIndoor">
-        Coperto
+    <label class="form-check-label ms-2" for="checkIndoor">
+        Indoor
     </label>
 </div>
 
@@ -110,11 +110,9 @@
     <div class="d-flex w-100 justify-content-center mb-3">
         <div>
             @if ($field->indoor)
-                <i class="bi bi-umbrella me-1 ms-1"></i>
-                <span class="text-uppercase font-weight-normal"> <i>Coperto</i></span>
+                <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
             @else
-                <span class="text-uppercase font-weight-normal"> <i>Scoperto</i></span>
-                <i class="bi bi-brightness-high me-1 ms-1"></i>
+                <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
             @endif
         </div>
     </div>

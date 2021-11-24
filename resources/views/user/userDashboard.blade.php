@@ -46,18 +46,20 @@
                             </div>
                         </div>
 
-                        <hr class="mb-5">
+                        <hr class="mb-3">
+
 
                         <div class="">
-                            <span class=" position-absolute end-0 me-3"><button class="btn btn-primary" type="button"
-                                    onclick="enableEditUserProfile()"><i class="bi bi-pencil-square"></i></button></span>
+                            <span class="position-absolute end-0 me-3 mb-2"> <button class="btn btn-primary text-uppercase text-white"
+                                    type="button" onclick="enableEditUserProfile()">Aggiorna dati
+                                    <i class="ms-2 bi bi-pencil-square"> </button></span>
                         </div>
 
                         <div class="container">
                             <form name="edit-profile" method="post" action="{{ route('user.aggiornaProfilo') }}"
                                 id="edit-profile" class="needs-validation" novalidate>
                                 @csrf
-                                <div class="input-group mb-3 justify-content-center">
+                                <div class="input-group mb-3 mt-3 justify-content-center">
                                     <div class="input-group col-10 col-lg-5 mb-3 mb-lg-0">
                                         <span class="input-group-text bg-light rounded" id="username-dashboard">
                                             Username @

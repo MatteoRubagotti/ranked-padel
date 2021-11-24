@@ -39,59 +39,79 @@ function checkDate(idField) {
 
                 if (response.orario08) {
                     var button = "#btnradio08";
+                    var label = "#labeltime08";
                     $(button).prop("disabled", true);
+                    $(label).css("font-weight", "normal");
                 }
 
                 if (response.orario09) {
                     var button = "#btnradio09";
+                    var label = "#labeltime09";
                     $(button).prop("disabled", true);
+                    $(label).css("font-weight", "normal");
                 }
 
                 if (response.orario10) {
                     var button = "#btnradio10";
+                    var label = "#labeltime10";
                     $(button).prop("disabled", true);
+                    $(label).css("font-weight", "normal");
                 }
 
                 if (response.orario11) {
                     var button = "#btnradio11";
                     $(button).prop("disabled", true);
+                    var label = "#labeltime11";
+                    $(label).css("font-weight", "normal");
                 }
 
                 if (response.orario12) {
                     var button = "#btnradio12";
                     $(button).prop("disabled", true);
+                    var label = "#labeltime12";
+                    $(label).css("font-weight", "normal");
                 }
 
                 if (response.orario14) {
                     var button = "#btnradio14";
                     $(button).prop("disabled", true);
+                    var label = "#labeltime14";
+                    $(label).css("font-weight", "normal");
                 }
 
                 if (response.orario15) {
                     var button = "#btnradio15";
                     $(button).prop("disabled", true);
+                    var label = "#labeltime15";
+                    $(label).css("font-weight", "normal");
                 }
 
                 if (response.orario16) {
                     var button = "#btnradio16";
                     $(button).prop("disabled", true);
+                    var label = "#labeltime16";
+                    $(label).css("font-weight", "normal");
                 }
 
                 if (response.orario17) {
                     var button = "#btnradio17";
                     $(button).prop("disabled", true);
+                    var label = "#labeltime17";
+                    $(label).css("font-weight", "normal");
                 }
 
                 if (response.orario18) {
                     var button = "#btnradio18";
                     $(button).prop("disabled", true);
+                    var label = "#labeltime18";
+                    $(label).css("font-weight", "normal");
                 }
             },
         });
     } else {
         $(".btn-check").prop("disabled", false);
-        date_msg.html(
-            "È impossibile prenotare un campo in questa data! Seleziona un'altra data."
+        date_invalid_msg.html(
+            "È impossibile prenotare un campo in una <i>data passata</i>! Seleziona un'altra data."
         );
     }
 }
@@ -154,8 +174,8 @@ function checkHour(idField) {
                 },
             });
         } else {
-            date_msg.html(
-                "È impossibile prenotare un campo in questa data! Seleziona un'altra data."
+            date_invalid_msg.html(
+                "È impossibile prenotare un campo in una <i>data passata</i>! Seleziona un'altra data."
             );
         }
     }
@@ -460,3 +480,8 @@ function getWeather() {
         });
     });
 }
+
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})

@@ -239,7 +239,7 @@ class DashboardController extends Controller
 
         $dl->addField($request->input('nameField'), $request->input('available'), $request->input('indoor'));
 
-        return Redirect::to(route('admin.dashboard'))->with('msg_field', 'Campo registrato nel DB correttamente!');
+        return Redirect::to(route('admin.dashboard'))->with('msg_field', 'Il campo è stato aggiunto correttamente alla lista dei tuoi campi!');
     }
 
     public function editField(Request $request, $idField)

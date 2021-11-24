@@ -15,7 +15,7 @@
                     action="{{ route('dashboard.eliminaPrenotazione', ['idGame' => $reservation->id]) }}">
                     @csrf
                     @if ($players[$reservation->id] > 1)
-                        <div data-bs-toggle="tooltip" title="Prenotazione non cancellabile!" data-bs-placement="top"
+                        <div data-bs-toggle="tooltip" title="Prenotazione non cancellabile, ci sono altri giocatori iscritti!" data-bs-placement="top"
                             id="reservation-not-removable{{ $loop->index }}">
                             <script>
                                 var index = JSON.parse("{{ json_encode($loop->index) }}");
@@ -60,11 +60,9 @@
                                         <h5>{{ $fields[$reservation->id]->name }}</h5>
 
                                         @if ($fields[$reservation->id]->indoor)
-                                            <i class="bi bi-umbrella me-1 ms-2"></i>
-                                            <span class="text-uppercase font-weight-normal"> <i>Coperto</i></span>
+                                            <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
                                         @else
-                                            <i class="bi bi-brightness-high me-1 ms-2"></i>
-                                            <span class="text-uppercase font-weight-normal"> <i>Scoperto</i></span>
+                                            <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
                                         @endif
                                     </div>
                                 </div>
@@ -86,34 +84,32 @@
                         <h5>{{ $fields[$reservation->id]->name }}</h5>
 
                         @if ($fields[$reservation->id]->indoor)
-                            <i class="bi bi-umbrella me-1 ms-2"></i>
-                            <span class="text-uppercase font-weight-normal"> <i>Coperto</i></span>
+                            <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
                         @else
-                            <i class="bi bi-brightness-high me-1 ms-2"></i>
-                            <span class="text-uppercase font-weight-normal"> <i>Scoperto</i></span>
+                            <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
                         @endif
                     </div>
 
                     <div class="mt-3" style="text-align: center; vertical-align: middle;">
-                        @if ($players[$reservation->id] == 4)
-                            <span class="mt-1 badge bg-secondary rounded-pill pb-2 pe-3"> <i
+                        {{-- @if ($players[$reservation->id] == 4)
+                            <span class="mt-1 pb-2 pe-3"> <i
+                                    class="bi bi-people me-1 ms-2" style="font-size: 16px;"></i>
+                                Giocatori: <span class="font-weight-normal">
+                                    {{ $players[$reservation->id] }}/4 </span>
+                            </span> --}}
+                        {{-- @elseif($players[$reservation->id] == 1) --}}
+                            <span class="mt-1 ps-0 pe-2 rounded" style="font-size: 18px"> <i
+                                    class="bi bi-people me-1 ms-2" style="font-size: 16px;""></i>
+                                Giocatori: <span class="font-weight-normal">
+                                    {{ $players[$reservation->id] }}/4 </span>
+                            </span>
+                        {{-- @else
+                            <span class="mt-1 pb-2 pe-3"> <i
                                     class="bi bi-people me-1 ms-2" style="font-size: 16px;"></i>
                                 Giocatori: <span class="font-weight-normal">
                                     {{ $players[$reservation->id] }}/4 </span>
                             </span>
-                        @elseif($players[$reservation->id] == 1)
-                            <span class="mt-1 badge bg-success rounded-pill pb-2 pe-3"> <i
-                                    class="bi bi-people me-1 ms-2" style="font-size: 16px;"></i>
-                                Giocatori: <span class="font-weight-normal">
-                                    {{ $players[$reservation->id] }}/4 </span>
-                            </span>
-                        @else
-                            <span class="mt-1 badge rounded-pill pb-2 pe-3" style="background-color: orange"> <i
-                                    class="bi bi-people me-1 ms-2" style="font-size: 16px;"></i>
-                                Giocatori: <span class="font-weight-normal">
-                                    {{ $players[$reservation->id] }}/4 </span>
-                            </span>
-                        @endif
+                        @endif --}}
                     </div>
                 </div>
             </div>

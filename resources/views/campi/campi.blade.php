@@ -63,6 +63,8 @@
 
 @section('corpo')
 
+    @include('user.bannersDashboard')
+
     @if (session('error_msg'))
         <div class="mt-5 mb-0 alert alert-danger alert-dismissible fade show text-center" role="alert">
             <b>{{ session('error_msg') }}</b>
@@ -107,31 +109,30 @@
                                 <h3 class="mb-3 display-7 lh-1 fw-bold text-uppercase d-flex justify-content-end">
                                     {{ $field->name }}</h3>
                                 <!-- <ul class="d-flex mb-0 ms-auto">
-                                                  <li class="d-flex align-items-center me-3 text-white bg-info rounded-2 p-1 ps-2 pe-2">
-                                                    <i class="bi bi-umbrella me-2"></i></i>Coperto
-                                                  </li>
-                                                </ul> -->
+                                        <li class="d-flex align-items-center me-3 text-white bg-info rounded-2 p-1 ps-2 pe-2">
+                                        <i class="bi bi-umbrella me-2"></i></i>Coperto
+                                        </li>
+                                    </ul> -->
                                 <ul class="d-flex list-unstyled mt-auto mb-0">
                                     <li class="me-3 justify-content-end">
                                         @if ($field->available)
                                             <i class="bi bi-circle-fill me-2"
-                                                style="color: rgb(0, 175, 0); font-size: 25px"></i> <b style="font-size: 15px !important"
-                                                class="pb-4">Disponibile</b>
+                                                style="color: rgb(0, 175, 0); font-size: 25px"></i> <b
+                                                style="font-size: 15px !important" class="pb-4">Disponibile</b>
                                         @else
                                             <i class="bi bi-circle-fill me-2" style="color: red; font-size: 25px"></i> <b
-                                                style="font-size: 15px !important" class="">Non disponibile</b>
+                                                style="font-size: 15px !important" class="">Non
+                                                disponibile</b>
                                         @endif
                                     </li>
                                     @if ($field->indoor)
                                         <li
                                             class="d-flex align-items-center me-3 text-white bg-info rounded-4 p-1 pe-2 ps-2">
-                                            <i class="bi bi-umbrella me-2"></i></i><b class="text-uppercase"> Coperto
-                                            </b>
+                                            <b class="text-uppercase"> Outdoor </b>
                                         @else
                                         <li
                                             class="d-flex align-items-center me-3 text-white bg-warning rounded-4 p-1 pe-2 ps-2">
-                                            <i class="bi bi-brightness-high me-2"></i></i><b class="text-uppercase">
-                                                Scoperto </b>
+                                            <b class="text-uppercase"> Indoor </b>
                                     @endif
                                     </li>
                                 </ul>

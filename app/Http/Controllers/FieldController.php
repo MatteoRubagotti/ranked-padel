@@ -37,7 +37,7 @@ class FieldController extends Controller
         $dl->addGame($idField, $request->input('date'), $time);
 
         //return redirect('/dashboard')->with('gameAdded', 'La tua prenotazione è avvenuta con successo!');
-        return Redirect::to(route('user.dashboard'))->with(['gameAdded' => 'La tua prenotazione è avvenuta con successo!']);
+        return Redirect::to(route('campi'))->with(['gameAdded' => 'La tua prenotazione è avvenuta con successo!']);
     }
 
     public function ajaxCheckHoursAvailable(Request $request)

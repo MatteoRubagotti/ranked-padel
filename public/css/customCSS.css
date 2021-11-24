@@ -221,7 +221,8 @@ h1 > img {
 }
 
 .table-hover tbody tr:hover a.btn:hover {
-    color: rgb(251, 255, 0) !important;
+    color: rgb(250, 255, 0) !important;
+    font-size: larger;
 }
 
 div.card {
@@ -401,4 +402,8 @@ span.input-group-text {
 /* Weather custom */
 .list-group-item.active:hover {
     background-color: none !important;
+}
+
+label.btn-outline-success {
+    font-weight: bolder;
 }

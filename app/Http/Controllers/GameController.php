@@ -48,6 +48,6 @@ class GameController extends Controller
         $dl = new DataLayer();
         $dl->addUserToGame($idGame, $request->input('idUser'));
         
-        return Redirect::to(route('user.dashboard'))->with(['userAdded' => 'Partecipazione effettuata!']);
+        return Redirect::to(route('partite'))->with(['userAdded' => 'Partecipazione alla partita effettuata con successo!']);
     }
 }
