@@ -40,7 +40,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-success fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ route('home') }}">
                 <img src="{{url('/')}}/svg/padel.svg" width="60" height="60" id="icon-padel">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"

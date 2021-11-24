@@ -43,9 +43,9 @@ class CheckGames
 
             $result = $game->users()->where('game_id', $idGame)->first()->pivot->result;
 
-            if ($result != -1) {
-                return redirect('dashboard')->with('msg_delete_error', 'Non è possibile modificare un risultato già registrato!');
-            }
+            // if ($result != -1) {
+            //     return redirect('dashboard')->with('msg_delete_error', 'Non è possibile modificare un risultato già registrato!');
+            // }
 
             if ($dl->getNumberPlayersGame($idGame) < 4) {
                 return redirect('dashboard')->with('msg_delete_error', 'Non è possibile registrare un risultato di una partita con meno di 4 giocatori!');

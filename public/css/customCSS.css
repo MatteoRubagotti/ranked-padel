@@ -376,7 +376,8 @@ span.input-group-text {
     text-overflow: ellipsis !important;
 }
 
-.ml-auto, .mx-auto {
+.ml-auto,
+.mx-auto {
     margin-left: auto !important;
 }
 
