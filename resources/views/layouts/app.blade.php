@@ -159,6 +159,12 @@
                                     </a>
 
                                     <ul class="dropdown-menu dropdown-menu-md-end" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item text-uppercase" @if(Auth::user()->is_admin)
+                                            href="{{ route('admin.dashboard') }}" @else href="{{ route('user.dashboard') }}"
+                                            @endif>
+                                            {{ __('Profilo') }}
+                                        </a></li>
+                                    <hr class="divider m-0 text-uppercase" style="border: solid 1px grey;">
                                         <li><a class="dropdown-item logout text-uppercase" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">

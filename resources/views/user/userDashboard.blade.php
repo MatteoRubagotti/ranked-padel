@@ -51,7 +51,7 @@
                         <div class="container col-12 mb-5 mx-auto pb-3">
                             <span class="position-absolute end-0 me-3"> <button
                                     class="btn btn-primary text-uppercase text-white" type="button"
-                                    onclick="enableEditUserProfile()">Aggiorna dati <i class="bi bi-pencil-square"></i>
+                                    onclick="enableEditUserProfile()">Modifica dati <i class="bi bi-pencil-square"></i>
                                 </button>
                             </span>
                         </div>

@@ -407,3 +407,7 @@ span.input-group-text {
 label.btn-outline-success {
     font-weight: bolder;
 }
+
+.alert {
+    font-size: 20px;
+}

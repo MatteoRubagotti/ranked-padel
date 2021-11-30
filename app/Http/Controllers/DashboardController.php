@@ -139,7 +139,7 @@ class DashboardController extends Controller
 
         $dl->updateResult($idGame, $result);
 
-        return Redirect::to(route('user.dashboard'))->with(['result_msg' => "Risultato aggiornato!"]);
+        return Redirect::to(route('user.dashboard'))->with(['result_msg' => "Risultato aggiornato con successo!"]);
     }
 
     public function aggiornaProfilo(Request $request)
@@ -160,7 +160,7 @@ class DashboardController extends Controller
         $age = $request->input('age');
 
         if ($dl->updateProfileUser(Auth::id(), $email, $age)) {
-            return Redirect::to(route('user.dashboard'))->with(['result_msg' => "Profilo aggiornato con successo!"]);
+            return Redirect::to(route('user.dashboard'))->with(['result_msg' => "Dati del profilo aggiornati con successo!"]);
         }
     }
 
@@ -239,7 +239,7 @@ class DashboardController extends Controller
 
         $dl->addField($request->input('nameField'), $request->input('available'), $request->input('indoor'));
 
-        return Redirect::to(route('admin.dashboard'))->with('msg_field', 'Il campo è stato aggiunto correttamente alla lista dei tuoi campi!');
+        return Redirect::to(route('admin.dashboard'))->with('msg_field', 'Campo aggiunto correttamente. Ora è visualizzabile nella lista "I miei campi"!');
     }
 
     public function editField(Request $request, $idField)

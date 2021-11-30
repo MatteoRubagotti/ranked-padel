@@ -6,7 +6,7 @@
             data-bs-target="#confirmDelete{{ $loop->index }}" style=""> ELIMINA <i class="bi bi-trash"></i>
         </button>
     @else
-        <div data-bs-toggle="tooltip" title="Campo non eliminabile!" data-bs-placement="top"
+        <div data-bs-toggle="tooltip" title="Campo non eliminabile! Ci sono delle partite in sospeso!" data-bs-placement="top"
             id="field-not-removable{{ $loop->index }}">
             <script>
                 var index = JSON.parse("{{ json_encode($loop->index) }}");

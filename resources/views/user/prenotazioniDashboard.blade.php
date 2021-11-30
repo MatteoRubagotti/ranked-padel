@@ -47,7 +47,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Sei sicuro di eliminare la tua
+                                    <h5 class="modal-title" id="exampleModalLabel">Sei sicuro di cancellare la tua
                                         prenotazione?</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
@@ -73,7 +73,7 @@
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
                                     </span>
                                     <span class="mx-auto">
-                                        <button type="submit" class="btn btn-danger text-uppercase">Elimina</button>
+                                        <button type="submit" class="btn btn-danger text-uppercase"> <i class="bi bi-trash"></i> Cancella</button>
                                     </span>
 
                                 </div>

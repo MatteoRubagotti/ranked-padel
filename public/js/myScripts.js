@@ -1,3 +1,15 @@
+function refresh() {
+    if (
+        ($("#date-picker").val() !== "") &
+        dateIsValid(new Date($("#date-picker").val()))
+    ) {
+        // alert(selected);
+        $("#container-orari").removeAttr("hidden");
+        $("#btn-update-time").removeAttr("hidden");
+    }
+    // alert(selected);
+}
+
 function checkDate(idField) {
     date_msg = $("#date-wrong");
     error_msg = $("#reservation-fail");
@@ -108,6 +120,8 @@ function checkDate(idField) {
                 }
             },
         });
+
+        $(".btn-group").removeAttr("hidden");
     } else {
         $(".btn-check").prop("disabled", false);
         date_invalid_msg.html(
@@ -167,7 +181,7 @@ function checkHour(idField) {
                         } else {
                             error = true;
                             error_msg.html(
-                                "Attenzione! Non è possibile prenotare in questo orario. Aggiorna gli orari premendo il tasto sopra!"
+                                "Attenzione! Non è possibile prenotare in questo orario. Aggiorna gli orari premendo il tasto 'Aggiorna orari disponibili'!"
                             );
                         }
                     }
@@ -448,7 +462,7 @@ function collapseOthers() {
 
 function getWeather() {
     var url =
-            "http://api.weatherapi.com/v1/forecast.json?key=2bccac77ee8c46e4a00163655210806&q=Brescia&lang=it&days=3&aqi=no&alerts=no";
+        "http://api.weatherapi.com/v1/forecast.json?key=2bccac77ee8c46e4a00163655210806&q=Brescia&lang=it&days=3&aqi=no&alerts=no";
 
     $.getJSON(url, function (response) {
         var location = response.location.name;
@@ -474,14 +488,25 @@ function getWeather() {
         days.forEach((element, index) => {
             $("#img-day".concat(index)).attr("src", icons[index]);
             // console.log(dates[index]);
-            $("#date-day".concat(index)).html(dates[index].concat('<i class="bi bi-calendar-event ms-3"></i>'));
-            $("#list-day".concat(index).concat("-list")).html(index == 0 ? ("Oggi • ").concat(dates[index]) : dates[index]);
-            $(".location-name").html(region.concat(" - ").concat(location).concat("<i class='bi bi-geo ms-2'></i>"));
+            $("#date-day".concat(index)).html(
+                dates[index].concat('<i class="bi bi-calendar-event ms-3"></i>')
+            );
+            $("#list-day".concat(index).concat("-list")).html(
+                index == 0 ? "Oggi • ".concat(dates[index]) : dates[index]
+            );
+            $(".location-name").html(
+                region
+                    .concat(" - ")
+                    .concat(location)
+                    .concat("<i class='bi bi-geo ms-2'></i>")
+            );
         });
     });
 }
 
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+);
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
-})
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+});

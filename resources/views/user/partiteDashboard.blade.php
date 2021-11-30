@@ -17,18 +17,17 @@
                 data-bs-target="#confirmDeleteGame" style="">
                 X
             </button> --}}
-                    <button type="button" class="btn bg-danger text-white p-2 pt-0 pb-0 mt-2 ms-2" data-bs-toggle="modal"
-                        data-bs-target="#confirmDelete{{ $loop->index }}" style=""> CANCELLA
+                    <button type="button" class="btn bg-danger text-white p-2 pt-0 pb-0 mt-2 ms-2 text-uppercase" data-bs-toggle="modal"
+                        data-bs-target="#confirmDelete{{ $game->id }}" style=""> Cancella
                         <i class="bi bi-trash"></i>
                     </button>
 
-                    <div class="modal fade" id="confirmDeleteGame" tabindex="-1"
+                    <div class="modal fade" id="confirmDelete{{ $game->id }}" tabindex="-1"
                         aria-labelledby="Conferma eliminazione" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Sei sicuro di eliminare la tua
-                                        partecipazione?</h5>
+                                    <h5 class="modal-title" id="exampleModalLabelPartite">Sei sicuro di cancellare la tua partecipazione?</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
@@ -52,7 +51,7 @@
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
                                     </span>
                                     <span class="mx-auto">
-                                        <button type="submit" class="btn btn-danger text-uppercase">Elimina</button>
+                                        <button type="submit" class="btn btn-danger text-uppercase"> <i class="bi bi-trash"></i> Cancella</button>
                                     </span>
                                 </div>
                             </div>
@@ -123,12 +122,12 @@
                         action="{{ route('dashboard.aggiornaRisultato', ['idGame' => $game->id]) }}">
                         @csrf
                         @if ($results[$game->id] == 0 || $results[$game->id] == 1)
-                            <button type="button" class="btn bg-success text-white p-2 text-uppercase"
+                            <button type="button" class="btn bg-primary text-white p-2 text-uppercase"
                                 data-bs-toggle="modal" data-bs-target="#updateResult{{ $loop->index }}" style="">
                                 Modifica risultato<i class="ms-2 bi bi-pencil-square"></i>
                             </button>
                         @else
-                            <button type="button" class="btn bg-success text-white p-2 text-uppercase"
+                            <button type="button" class="btn bg-info text-white p-2 text-uppercase"
                                 data-bs-toggle="modal" data-bs-target="#updateResult{{ $loop->index }}" style="">
                                 Aggiungi risultato <i class="ms-2 bi bi-plus-circle-fill"></i>
                             </button>

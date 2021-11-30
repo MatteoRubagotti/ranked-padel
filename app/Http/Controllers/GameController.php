@@ -39,8 +39,9 @@ class GameController extends Controller
 
         $owner = $dl->getUser($game->owner_id);
         $field = $dl->getField($game->field_id);
+        $playersPerGame = $dl->getNumberPlayersGame($game->id);
 
-        return view('partite.partecipazionePartita')->with(['game' => $game, 'owner' => $owner, 'field' => $field]);
+        return view('partite.partecipazionePartita')->with(['game' => $game, 'owner' => $owner, 'field' => $field, 'playersPerGame' => $playersPerGame]);
     }
 
     public function partecipaPartita(Request $request, $idGame) {
@@ -48,6 +49,6 @@ class GameController extends Controller
         $dl = new DataLayer();
         $dl->addUserToGame($idGame, $request->input('idUser'));
         
-        return Redirect::to(route('partite'))->with(['userAdded' => 'Partecipazione alla partita effettuata con successo!']);
+        return Redirect::to(route('partite'))->with(['userAdded' => 'Partecipazione alla partita effettuata con successo! Puoi controllare lo stato delle tue partite nel tuo profilo']);
     }
 }
