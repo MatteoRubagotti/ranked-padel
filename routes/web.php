@@ -76,3 +76,6 @@ Route::get('/ajaxModificaNomeCampo', 'FieldController@ajaxCheckEditNameField');
 
 // Debug
 Route::view('/debug', 'debug');
+
+// Mock-up testing
+Route::view('/test', 'test');
