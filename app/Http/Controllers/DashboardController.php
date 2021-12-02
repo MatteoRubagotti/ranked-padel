@@ -267,7 +267,7 @@ class DashboardController extends Controller
 
         $email = $request->input('email');
 
-        Debugbar::info($email);
+        // Debugbar::info($email);
 
         $checked = $dl->checkEmail(Auth::id(), $email);
         $response = array('checked' => $checked);

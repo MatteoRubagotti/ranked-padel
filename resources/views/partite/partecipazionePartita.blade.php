@@ -81,10 +81,10 @@
 
                             @if ($field->indoor)
                                 <li class="d-flex align-items-center me-1 text-white bg-info rounded-4 p-1 pe-2 ps-2">
-                                    <span class="text-uppercase"> Indoor </span>
+                                    <span class="text-uppercase"> Al chiuso </span>
                                 @else
                                 <li class="d-flex align-items-center me-1 text-white bg-warning rounded-4 p-1 pe-2 ps-2">
-                                    <span class="text-uppercase"> Outdoor </span>
+                                    <span class="text-uppercase"> All'aperto </span>
                             @endif
 
                             </li>

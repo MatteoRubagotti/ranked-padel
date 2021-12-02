@@ -10,7 +10,7 @@
     @guest
         <title> Ranked Padel - Accedi / Registrati</title>
     @else
-        <title> Ranked Padel - Dashboard</title>
+        <title> Ranked Padel - Profilo</title>
     @endguest
 
     <!-- Scripts -->

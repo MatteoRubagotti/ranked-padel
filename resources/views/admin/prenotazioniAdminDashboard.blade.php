@@ -1,4 +1,4 @@
-<h3 class="ms-auto text-uppercase text-center text-info display-6 font-weight-bold mb-4 mt-4" id="games_page"><b>Prenotazioni dei miei campi</b></h3>
+<h3 class="ms-auto text-uppercase text-center text-success display-6 font-weight-bold mb-4 mt-4" id="games_page"><b>Prenotazioni in corso</b></h3>
 <div class="list-group offset-lg-1 col-lg-7 col-md-9 col-sm-11 col-12 ms-2 ms-sm-auto me-sm-auto">
 
     @foreach($reservations as $reservation)
@@ -16,9 +16,9 @@
                     <h5>{{$fields[$reservation->id]->name}}</h5>
 
                     @if($fields[$reservation->id]->indoor)
-                    <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
+                    <span class="text-uppercase font-weight-normal"> <i>Al chiuso</i></span>
                     @else
-                    <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
+                    <span class="text-uppercase font-weight-normal"> <i>All'aperto</i></span>
                     @endif
                 </div>
 

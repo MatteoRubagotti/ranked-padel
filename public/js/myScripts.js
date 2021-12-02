@@ -1,4 +1,4 @@
-function refresh() {
+function refresh(idField) {
     if (
         ($("#date-picker").val() !== "") &
         dateIsValid(new Date($("#date-picker").val()))
@@ -6,6 +6,9 @@ function refresh() {
         // alert(selected);
         $("#container-orari").removeAttr("hidden");
         $("#btn-update-time").removeAttr("hidden");
+        $(".btn-group").removeAttr("hidden");
+
+        checkDate(idField);
     }
     // alert(selected);
 }
@@ -48,6 +51,8 @@ function checkDate(idField) {
             data: { date: date, idField: idField },
             success: function (response) {
                 // console.log(response);
+                
+                $(".btn-radio-orari").css("font-weight", "bold");
 
                 if (response.orario08) {
                     var button = "#btnradio08";

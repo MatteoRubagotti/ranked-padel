@@ -210,18 +210,19 @@ h1 > img {
     margin-top: 3em;
 }
 
-.table-hover tbody tr:hover td,
-.table-hover tbody tr:hover th {
-    background-color: #00a85a; /* rgb(24, 168, 19); */
-    color: white !important;
-}
 
-.table-hover tbody tr:hover a.btn {
+/* .table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+    background-color: #00a85a; rgb(24, 168, 19);
     color: white !important;
-}
+} */
+
+/* .table-hover tbody tr:hover a.btn {
+    color: white !important;
+} */
 
 .table-hover tbody tr:hover a.btn:hover {
-    color: rgb(250, 255, 0) !important;
+    color: #198754 !important;
     font-size: larger;
 }
 
@@ -410,4 +411,8 @@ label.btn-outline-success {
 
 .alert {
     font-size: 20px;
+}
+
+.login-title {
+    font-weight: bolder;
 }

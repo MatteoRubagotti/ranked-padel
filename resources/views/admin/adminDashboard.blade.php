@@ -65,11 +65,11 @@
 
                         <hr class="mt-5">
 
-                        @include('admin.campiAdminDashboard')
+                        @include('admin.prenotazioniAdminDashboard')
 
                         <hr class="">
 
-                        @include('admin.prenotazioniAdminDashboard')
+                        @include('admin.campiAdminDashboard')
 
                         <hr class="">
 

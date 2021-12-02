@@ -1,4 +1,4 @@
-<h1 class="text-uppercase text-primary text-center display-6 font-weight-bold mb-4 mt-4"><b>Le mie
+<h1 class="text-uppercase text-success text-center display-6 font-weight-bold mb-4 mt-4"><b>Le mie
         prenotazioni</b></h1>
 
 <div class="list-group offset-lg-1 col-lg-7 col-md-9 col-sm-11 col-12 ms-2 ms-sm-auto me-sm-auto"
@@ -62,9 +62,9 @@
                                         <h5>{{ $fields[$reservation->id]->name }}</h5>
 
                                         @if ($fields[$reservation->id]->indoor)
-                                            <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
+                                            <span class="text-uppercase font-weight-normal"> <i>Al chiuso</i></span>
                                         @else
-                                            <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
+                                            <span class="text-uppercase font-weight-normal"> <i>All'aperto</i></span>
                                         @endif
                                     </div>
                                 </div>
@@ -90,9 +90,9 @@
                         <h5>{{ $fields[$reservation->id]->name }}</h5>
 
                         @if ($fields[$reservation->id]->indoor)
-                            <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
+                            <span class="text-uppercase font-weight-normal"> <i>Al chiuso</i></span>
                         @else
-                            <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
+                            <span class="text-uppercase font-weight-normal"> <i>All'aperto</i></span>
                         @endif
                     </div>
 

@@ -158,7 +158,7 @@ class DataLayer
             ->where('date', '<=', Carbon::now())
             ->orderBy('date')->orderBy('time')->paginate(5, ['*'], 'userPastGames-section');
 
-        Debugbar::info($userGames);
+        // Debugbar::info($userGames);
 
         return $userGames;
     }
@@ -309,7 +309,7 @@ class DataLayer
             ->where('field_id', $idField)
             ->orderBy('time')->get();
 
-        Debugbar::info($games);
+        // Debugbar::info($games);
 
         return $games;
     }
@@ -349,7 +349,7 @@ class DataLayer
 
         $usersWithEmail = User::where('email', $email)->get();
 
-        Debugbar::info($usersWithEmail);
+        // Debugbar::info($usersWithEmail);
 
         if ($userCurrentEmail == $email || count($usersWithEmail) == 0) {
             return true;
@@ -362,7 +362,7 @@ class DataLayer
     {
         $field = Field::where('name', $nameField)->get();
 
-        Debugbar::info($field);
+        // Debugbar::info($field);
 
         if (count($field) == 0) {
             return true;

@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'matteo',
             'name' => 'Matteo',
             'lastname' => 'Rubagotti',
-            'email' => 'matteo@admin.com',
+            'email' => 'matteo@trapmail.com',
             'password' => Hash::make('1'),
             'age' => 24,
             'hand' => 'dx',

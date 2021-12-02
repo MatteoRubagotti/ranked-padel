@@ -27,7 +27,7 @@ class Availability
             $field = Field::find($idField);
 
             if (!($field->available)) {
-                return Redirect::to('campi')->with('error_msg', 'Non è possibile prenotare un campo non disponibile!');
+                return Redirect::to('campi')->with('error_msg', 'ATTENZIONE! NON è possibile prenotare un CAMPO NON DISPONIBILE!');
             }
 
             return $next($request);
@@ -42,17 +42,17 @@ class Availability
             $numberPlayers = $dl->getNumberPlayersGame($idGame);
 
             if ($numberPlayers >= 4) {
-                return Redirect::to('partite')->with('error_msg', 'Non è possibile partecipare ad una partita in cui è già stato raggiunto il massimo numero di giocatori');
+                return Redirect::to('partite')->with('error_msg', 'ATTENZIONE! NON è possibile partecipare ad una partita in cui è già stato raggiunto il MASSIMO NUMERO DI GIOCATORI');
             }
 
             // User already subscribed to a game
 
             if ($idGame == $dl->getUserGameID($idGame)) {
-                return Redirect::to('partite')->with('error_msg', 'Non puoi partecipare ad una partita a cui appartieni già!');
+                return Redirect::to('partite')->with('error_msg', 'ATTENZIONE! NON PUOI PARTECIPARE AD UNA PARTITA A CUI APPARTIENI GIÀ!');
             }
 
             if ($dl->getGame($idGame)->level < Auth::user()->level) {
-                return Redirect::to('partite')->with('error_msg', 'Non puoi partecipare ad una partita di livello inferiore al tuo!');
+                return Redirect::to('partite')->with('error_msg', 'ATTENZIONE! Non puoi partecipare ad una partita di livello inferiore al tuo!');
             }
 
             return $next($request);
@@ -65,7 +65,7 @@ class Availability
             ->where('time', $request->input('time'))->get();
 
             if(count($game) != 0) {
-                return Redirect::to('campi')->with('error_msg', 'Non è possibile prenotare un campo già prenotato!');
+                return Redirect::to('campi')->with('error_msg', 'ATTENZIONE! NON è possibile prenotare un campo già prenotato!');
             }
 
             return $next($request);
@@ -74,7 +74,7 @@ class Availability
         $dl = new DataLayer();
         
         if($request->routeIs('admin.eliminaCampo') && $dl->fieldWithGames($request->route()->parameter('idField'))) {
-            return Redirect::to(route('admin.dashboard'))->with('msg_delete', 'Attenzione! Non puoi eliminare un campo che ha delle partite prenotate.');
+            return Redirect::to(route('admin.dashboard'))->with('msg_delete', 'ATTENZIONE! NON puoi eliminare un campo che ha delle partite prenotate.');
         }
 
         return $next($request);

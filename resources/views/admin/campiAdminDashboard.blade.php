@@ -1,4 +1,4 @@
-<h3 class="ms-auto text-uppercase text-primary text-center display-6 font-weight-bold mb-4 mt-4" id="fields_page"><b>
+<h3 class="ms-auto text-uppercase text-success text-center display-6 font-weight-bold mb-4 mt-4" id="fields_page"><b>
         I miei campi</b>
 </h3>
 <div class="list-group offset-lg-1 col-lg-7 col-md-9 col-sm-11 col-12 ms-2 ms-sm-auto me-sm-auto">
@@ -16,7 +16,7 @@
                     <div class="me-0"><button type="button"
                             class="btn btn-outline-primary p-2 pt-0 pb-0 text-uppercase mt-2" data-bs-toggle="modal"
                             data-bs-target="#confirmEdit{{ $loop->index }}" style="">
-                            MODIFICA <i class="bi bi-pencil-square"></i>
+                            Modifica <i class="bi bi-pencil-square"></i>
                         </button></div>
                     <div class="modal fade" id="confirmEdit{{ $loop->index }}" tabindex="-1"
                         aria-labelledby="Conferma eliminazione" aria-hidden="true">
@@ -48,7 +48,7 @@
                                                 id="checkIndoor{{ $loop->index }}" name="indoor" @if ($field->indoor) checked
     @endif>
     <label class="form-check-label ms-2" for="checkIndoor">
-        Indoor
+        Al chiuso
     </label>
 </div>
 
@@ -110,9 +110,9 @@
     <div class="d-flex w-100 justify-content-center mb-3">
         <div>
             @if ($field->indoor)
-                <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
+                <span class="text-uppercase font-weight-normal"> <i>Al chiuso</i></span>
             @else
-                <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
+                <span class="text-uppercase font-weight-normal"> <i>All'aperto</i></span>
             @endif
         </div>
     </div>

@@ -127,12 +127,12 @@
                                     </li>
                                     @if ($field->indoor)
                                         <li
-                                            class="d-flex align-items-center mx-auto me-3 text-white bg-info rounded-4 p-1 pe-2 ps-2">
-                                            <b class="text-uppercase"> Outdoor </b>
+                                            class="d-flex align-items-center mx-auto me-3 text-white bg-primary rounded-4 p-1 pe-2 ps-2">
+                                            <b class="text-uppercase"> All'aperto </b>
                                         @else
                                         <li
                                             class="d-flex align-items-center mx-auto me-3 text-white bg-warning rounded-4 p-1 pe-2 ps-2">
-                                            <b class="text-uppercase"> Indoor </b>
+                                            <b class="text-uppercase"> Al chiuso </b>
                                     @endif
                                     </li>
                                 </ul>

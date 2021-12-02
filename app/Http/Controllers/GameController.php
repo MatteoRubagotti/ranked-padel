@@ -25,7 +25,7 @@ class GameController extends Controller
             $playersPerGame[$idGame] = $players;
         }
 
-        Debugbar::info($games);
+        // Debugbar::info($games);
 
         return view('partite.partite')
             ->with('games', $games)

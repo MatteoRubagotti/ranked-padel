@@ -1,5 +1,5 @@
-<h1 class="text-uppercase text-secondary text-center display-6 font-weight-bold mb-4 mt-4"><b>Le mie
-        partite</b></h1>
+<h1 class="text-uppercase text-success text-center display-6 font-weight-bold mb-4 mt-4"><b>Le mie
+        partite da giocare</b></h1>
 
 <div class="list-group offset-lg-1 col-lg-7 col-md-9 col-sm-11 col-12 ms-2 ms-sm-auto me-sm-auto">
 
@@ -40,9 +40,9 @@
                                         <h5>{{ $fieldsUserGames[$game->id]->name }}</h5>
 
                                         @if ($fieldsUserGames[$game->id]->indoor)
-                                            <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
+                                            <span class="text-uppercase font-weight-normal"> <i>Al chiuso</i></span>
                                         @else
-                                            <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
+                                            <span class="text-uppercase font-weight-normal"> <i>All'aperto</i></span>
                                         @endif
                                     </div>
                                 </div>
@@ -67,9 +67,9 @@
                         <h5>{{ $fieldsUserGames[$game->id]->name }}</h5>
 
                         @if ($fieldsUserGames[$game->id]->indoor)
-                            <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
+                            <span class="text-uppercase font-weight-normal"> <i>Al chiuso</i></span>
                         @else
-                            <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
+                            <span class="text-uppercase font-weight-normal"> <i>All'aperto</i></span>
                         @endif
                     </div>
 
@@ -105,7 +105,7 @@
 
 <hr class="mb-5">
 
-<h1 class="text-uppercase text-warning text-center display-6 font-weight-bold mb-4 mt-4"><b>Le mie
+<h1 class="text-uppercase text-success text-center display-6 font-weight-bold mb-4 mt-4"><b>Le mie
         partite giocate</b></h1>
 
 <div class="list-group offset-lg-1 col-lg-7 col-md-9 col-sm-11 col-12 ms-2 ms-sm-auto me-sm-auto">
@@ -127,7 +127,7 @@
                                 Modifica risultato<i class="ms-2 bi bi-pencil-square"></i>
                             </button>
                         @else
-                            <button type="button" class="btn bg-info text-white p-2 text-uppercase"
+                            <button type="button" class="btn bg-primary text-white p-2 text-uppercase"
                                 data-bs-toggle="modal" data-bs-target="#updateResult{{ $loop->index }}" style="">
                                 Aggiungi risultato <i class="ms-2 bi bi-plus-circle-fill"></i>
                             </button>
@@ -152,9 +152,9 @@
                                             </h5>
 
                                             @if ($fieldsUserPastGames[$game->id]->indoor)
-                                                <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
+                                                <span class="text-uppercase font-weight-normal"> <i>Al chiuso</i></span>
                                             @else
-                                                <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
+                                                <span class="text-uppercase font-weight-normal"> <i>All'aperto</i></span>
                                             @endif
                                         </div>
                                     </div>
@@ -179,10 +179,9 @@
                             <h5>{{ $fieldsUserPastGames[$game->id]->name }}</h5>
 
                             @if ($fieldsUserPastGames[$game->id]->indoor)
-                                <span class="text-uppercase font-weight-normal"> <i>Indoor</i></span>
+                                <span class="text-uppercase font-weight-normal"> <i>Al chiuso</i></span>
                             @else
-                                <i class="bi bi-brightness-high me-1 ms-2"></i>
-                                <span class="text-uppercase font-weight-normal"> <i>Outdoor</i></span>
+                                <span class="text-uppercase font-weight-normal"> <i>All'aperto</i></span>
                             @endif
                         </div>
 

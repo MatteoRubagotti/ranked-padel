@@ -24,7 +24,7 @@
                     <div class="mb-3 ms-4">
                         <input class="form-check-input" type="checkbox" value="1" id="checkIndoor" name="indoor">
                         <label class="form-check-label" for="checkIndoor">
-                            Coperto
+                            Al chiuso
                         </label>
                     </div>
 

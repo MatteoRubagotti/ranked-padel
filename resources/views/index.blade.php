@@ -65,7 +65,7 @@
 <div class="welcome-container container my-5 mw-100 bg-light mb-2">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
         <div class="col-lg-7 p-3 p-xl-3 pt-lg-3 mb-lg-5">
-            <h1 class="fw-bold mt-3 display-2 ms-3 text-center">BENVENUTO IN <b class="title">RANKED PADEL!</b></h1>
+            <h1 class="fw-bold mt-3 display-2 ms-3 text-center">BENVENUTO IN <div><b class="title">RANKED PADEL!</b></div></h1>
             <h1 class="text-center"><img src="svg/logo-padel.png" width="110" height="128"></img></h1>
             <p class="lead mt-3 ms-5 me-5">Piattaforma per la <b class="fw-bold text-uppercase">prenotazione</b> di
                 campi da padel oppure <b class="fw-bold text-uppercase">partecipa</b> a partite già create da altri
