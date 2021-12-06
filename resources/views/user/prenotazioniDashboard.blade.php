@@ -47,7 +47,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Sei sicuro di cancellare la tua
+                                    <h5 class="modal-title" id="exampleModalLabel{{ $loop->index }}">Sei sicuro di cancellare la tua
                                         prenotazione?</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>

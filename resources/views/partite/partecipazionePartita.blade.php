@@ -73,14 +73,14 @@
                         <h4 class="mb-3 display-7 lh-1 fw-bold text-uppercase d-flex justify-content-end">
                             {{ $field->name }}</h4>
                         <!-- <ul class="d-flex mb-0 ms-auto">
-                        <li class="d-flex align-items-center me-3 text-white bg-info rounded-2 p-1 ps-2 pe-2">
-                            <i class="bi bi-umbrella me-2"></i></i>Coperto
-                        </li>
-                        </ul> -->
+                            <li class="d-flex align-items-center me-3 text-white bg-info rounded-2 p-1 ps-2 pe-2">
+                                <i class="bi bi-umbrella me-2"></i></i>Coperto
+                            </li>
+                            </ul> -->
                         <ul class="d-flex list-unstyled mt-auto mb-0">
 
                             @if ($field->indoor)
-                                <li class="d-flex align-items-center me-1 text-white bg-info rounded-4 p-1 pe-2 ps-2">
+                                <li class="d-flex align-items-center me-1 text-white bg-primary rounded-4 p-1 pe-2 ps-2">
                                     <span class="text-uppercase"> Al chiuso </span>
                                 @else
                                 <li class="d-flex align-items-center me-1 text-white bg-warning rounded-4 p-1 pe-2 ps-2">
@@ -88,7 +88,7 @@
                             @endif
 
                             </li>
-                            <li class="d-flex me-2 p-0 pe-2 ps-2 align-content-end" style="font-size: 30px;">
+                            <li class="d-flex me-2 p-0 pe-2 ps-2 mx-auto" style="font-size: 30px;">
                                 <i class="bi bi-people me-2 ms-3" style="font-size: 30px;"></i>
                                 {{ $playersPerGame }}/4
                             </li>
@@ -130,12 +130,12 @@
                         @endif
                         </h6>
                     </div>
-                    <p class="mt-4 mb-4">
-                        <button class="btn btn-primary text-uppercase me-3" id="btn-partecipa-partita">
+                    <p class="mt-5 mb-4">
+                        <a href="{{ route('partite') }}" class="btn btn-danger text-uppercase text-white me-5"
+                            id="btn-annulla">Annulla</a>
+                        <button class="btn btn-primary text-uppercase" id="btn-partecipa-partita">
                             <input class="d-none" name="idUser" value="{{ Auth::id() }}" id="idUser">
                             <b>Partecipa</b> </button>
-                        <a href="{{ route('partite') }}" class="btn btn-danger text-uppercase text-white"
-                            id="btn-annulla">Annulla</a>
                     </p>
 
                 </form>

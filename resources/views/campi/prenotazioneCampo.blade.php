@@ -73,10 +73,10 @@
                         <h4 class="mb-3 display-7 lh-1 fw-bold text-uppercase d-flex justify-content-end">
                             {{ $field->name }}</h4>
                         <!-- <ul class="d-flex mb-0 ms-auto">
-                                                    <li class="d-flex align-items-center me-3 text-white bg-info rounded-2 p-1 ps-2 pe-2">
-                                                      <i class="bi bi-umbrella me-2"></i></i>Coperto
-                                                    </li>
-                                                  </ul> -->
+                                                        <li class="d-flex align-items-center me-3 text-white bg-info rounded-2 p-1 ps-2 pe-2">
+                                                          <i class="bi bi-umbrella me-2"></i></i>Coperto
+                                                        </li>
+                                                      </ul> -->
                         <ul class="d-flex list-unstyled mt-auto mb-0">
                             @if ($field->indoor)
                                 <li class="d-flex align-items-center me-3 text-white bg-primary rounded-4 p-1 pe-2 ps-2">
@@ -96,8 +96,11 @@
                     id="prenota-form">
                     @csrf
                     <h5><b class="text-uppercase"> Data: </b></h5>
+                    <p>
+                        Seleziona una data
+                    </p>
                     <label>
-                        <p class="mt-2"><input type="date" class="date" name="date" aria-required="Data"
+                        <p class="mt-0"><input type="date" class="date" name="date" aria-required="Data"
                                 id="date-picker" required onchange="refresh({{ $field->id }})">
                             <span class="validity"></span>
                         </p>
@@ -121,6 +124,9 @@
 
                     <div class="container-fluid" id="container-orari" hidden>
                         <h5><b class="text-uppercase"> Orario: </b></h5>
+                        <p>
+                            Seleziona l'orario per effettuare la prenotazione
+                        </p>
                         {{-- <span><button type="button" class="btn btn-primary rounded-5 text-uppercase mb-3"
                                 onclick="checkDate({{ $field->id }})" hidden id="btn-update-time"><i class="bi bi-arrow-clockwise"></i> Aggiorna
                                 orari disponibili</button></span> --}}
@@ -131,44 +137,54 @@
                         <div class="btn-group p-2 w-75" role="group" aria-label="Orario mattina" hidden>
                             <input type="radio" class="btn-check" name="time" value="08" id="btnradio08"
                                 autocomplete="off">
-                            <label id="labeltime08" class="btn btn-outline-success btn-radio-orari" for="btnradio08">08:00</label>
+                            <label id="labeltime08" class="btn btn-outline-success btn-radio-orari"
+                                for="btnradio08">08:00</label>
 
                             <input type="radio" class="btn-check" name="time" value="09" id="btnradio09"
                                 autocomplete="off">
-                            <label id="labeltime09" class="btn btn-outline-success btn-radio-orari" for="btnradio09">09:00</label>
+                            <label id="labeltime09" class="btn btn-outline-success btn-radio-orari"
+                                for="btnradio09">09:00</label>
 
                             <input type="radio" class="btn-check" name="time" value="10" id="btnradio10"
                                 autocomplete="off">
-                            <label id="labeltime10" class="btn btn-outline-success btn-radio-orari" for="btnradio10">10:00</label>
+                            <label id="labeltime10" class="btn btn-outline-success btn-radio-orari"
+                                for="btnradio10">10:00</label>
 
                             <input type="radio" class="btn-check" name="time" value="11" id="btnradio11"
                                 autocomplete="off">
-                            <label id="labeltime11" class="btn btn-outline-success btn-radio-orari" for="btnradio11">11:00</label>
+                            <label id="labeltime11" class="btn btn-outline-success btn-radio-orari"
+                                for="btnradio11">11:00</label>
 
                             <input type="radio" class="btn-check" name="time" value="12" id="btnradio12"
                                 autocomplete="off">
-                            <label id="labeltime12" class="btn btn-outline-success btn-radio-orari" for="btnradio12">12:00</label>
+                            <label id="labeltime12" class="btn btn-outline-success btn-radio-orari"
+                                for="btnradio12">12:00</label>
                         </div>
                         <div class="btn-group p-2 w-75 mb-3" role="group" aria-label="Orario pomeriggio" hidden>
                             <input type="radio" class="btn-check" name="time" value="14" id="btnradio14"
                                 autocomplete="off">
-                            <label id="labeltime14" class="btn btn-outline-success btn-radio-orari" for="btnradio14">14:00</label>
+                            <label id="labeltime14" class="btn btn-outline-success btn-radio-orari"
+                                for="btnradio14">14:00</label>
 
                             <input type="radio" class="btn-check" name="time" value="15" id="btnradio15"
                                 autocomplete="off">
-                            <label id="labeltime15" class="btn btn-outline-success btn-radio-orari" for="btnradio15">15:00</label>
+                            <label id="labeltime15" class="btn btn-outline-success btn-radio-orari"
+                                for="btnradio15">15:00</label>
 
                             <input type="radio" class="btn-check" name="time" value="16" id="btnradio16"
                                 autocomplete="off">
-                            <label id="labeltime16" class="btn btn-outline-success btn-radio-orari" for="btnradio16">16:00</label>
+                            <label id="labeltime16" class="btn btn-outline-success btn-radio-orari"
+                                for="btnradio16">16:00</label>
 
                             <input type="radio" class="btn-check" name="time" value="17" id="btnradio17"
                                 autocomplete="off">
-                            <label id="labeltime17" class="btn btn-outline-success btn-radio-orari" for="btnradio17">17:00</label>
+                            <label id="labeltime17" class="btn btn-outline-success btn-radio-orari"
+                                for="btnradio17">17:00</label>
 
                             <input type="radio" class="btn-check" name="time" value="18" id="btnradio18"
                                 autocomplete="off">
-                            <label id="labeltime18" class="btn btn-outline-success btn-radio-orari" for="btnradio18">18:00</label>
+                            <label id="labeltime18" class="btn btn-outline-success btn-radio-orari"
+                                for="btnradio18">18:00</label>
                         </div>
 
                         <script>
@@ -186,10 +202,10 @@
 
                     </div>
                     <p id="btn-annulla-conferma" class="mt-3 mb-4" hidden>
-                        <button type="submit" class="btn btn-primary text-uppercase me-3" id="btn-prenota"
-                            onclick="event.preventDefault(); checkHour({{ $field->id }})">Prenota</button>
-                        <a href="{{ route('campi') }}" class="btn btn-danger text-uppercase text-white"
+                        <a href="{{ route('campi') }}" class="btn btn-danger text-uppercase text-white me-5"
                             id="btn-annulla">Annulla</a>
+                        <button type="submit" class="btn btn-primary text-uppercase" id="btn-prenota"
+                            onclick="event.preventDefault(); checkHour({{ $field->id }})">Prenota</button>
                     </p>
 
                 </form>
