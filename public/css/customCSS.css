@@ -196,7 +196,7 @@ h1 > img {
     padding-bottom: 10px;
 }
 
-/* Table ranking */
+/* Ranking table */
 #ranking {
     margin-top: 2em;
 }
@@ -210,6 +210,13 @@ h1 > img {
     margin-top: 3em;
 }
 
+#ranking-table_filter {
+    margin-bottom: 15px;
+}
+
+#ranking-table_paginate {
+    margin-top: 15px;
+}
 
 /* .table-hover tbody tr:hover td,
 .table-hover tbody tr:hover th {
@@ -389,15 +396,6 @@ span.input-group-text {
 
 .accordion-body-custom {
     max-height: 300px;
-}
-
-/* DataTables custom */
-#ranking-table_filter {
-    margin-bottom: 15px;
-}
-
-#ranking-table_paginate {
-    margin-top: 15px;
 }
 
 /* Weather custom */

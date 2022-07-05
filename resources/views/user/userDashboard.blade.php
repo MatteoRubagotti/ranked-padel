@@ -6,7 +6,8 @@
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">
-                        <h1 class="text-uppercase text-success text-center display-1 font-weight-bolder"><b>Area personale</b>
+                        <h1 class="text-uppercase text-success text-center display-1 font-weight-bolder"><b>Area
+                                personale</b>
                         </h1>
                     </div>
                     <div class="card-body">
@@ -61,7 +62,7 @@
                                 id="edit-profile" class="needs-validation" novalidate>
                                 @csrf
                                 <div class="input-group mb-3 mt-3 justify-content-center">
-                                    <div class="input-group col-10 col-lg-5 mb-3 mb-lg-0">
+                                    <div class="input-group col-10 col-lg-5 mb-3 mb-lg-2">
                                         <span class="input-group-text bg-light rounded" id="username-dashboard">
                                             Username @
                                         </span>
@@ -79,7 +80,6 @@
                                             <div id="email-alert" class="mt-2 text-center text-danger"></div>
                                         </div>
                                     </div>
-
 
                                 </div>
 

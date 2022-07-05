@@ -1,7 +1,47 @@
 function refresh(idField) {
+    // var input_date = new Date($("#date-picker").val());
+
+    // if (!dateIsValid(input_date)) {
+    //     date_invalid_msg.html("Inserisci una data valida.");
+    // }
+
+    date_msg = $("#date-wrong");
+    error_msg = $("#reservation-fail");
+    date_invalid_msg = $("#date-invalid");
+
+    date_msg.html("");
+    date_invalid_msg.html("");
+    error_msg.html("");
+
+    var input_date = new Date($("#date-picker").val());
+
+    if (!dateIsValid(input_date)) {
+        date_invalid_msg.html("Inserisci una data valida.");
+    }
+
+    day = input_date.getDate();
+    month = input_date.getMonth() + 1;
+    year = input_date.getFullYear();
+
+    var date = new Date(year, month - 1, day + 1).toISOString().slice(0, 10);
+
+    var today = new Date().toISOString().slice(0, 10);
+
+    // console.log(date);
+
+    var error = false;
+
+    if (date <= today) {
+        date_invalid_msg.html("È impossibile prenotare un campo in una <i>data passata</i>! Seleziona un'altra data.");
+        $("#container-orari").attr("hidden",true);
+        $("#btn-update-time").attr("hidden",true);
+        $(".btn-group").attr("hidden",true);
+    }
+
     if (
         ($("#date-picker").val() !== "") &
-        dateIsValid(new Date($("#date-picker").val()))
+        dateIsValid(new Date($("#date-picker").val())) &
+        date > today
     ) {
         // alert(selected);
         $("#container-orari").removeAttr("hidden");

@@ -214,15 +214,15 @@ class DashboardController extends Controller
             $fieldsDelete[$field->id] = true;
         }
 
-        // return view('admin.adminDashboard')
-        //     ->with('user', Auth::user())
-        //     ->with([
-        //         'reservations' => $reservations,
-        //         'fields' => $fieldsReservations,
-        //         'players' => $players,
-        //         'allFields' => $fields,
-        //         'fieldsDelete' => $fieldsDelete,
-        //     ]);
+        return view('admin.adminDashboard')
+            ->with('user', Auth::user())
+            ->with([
+                'reservations' => $reservations,
+                'fields' => $fieldsReservations,
+                'players' => $players,
+                'allFields' => $fields,
+                'fieldsDelete' => $fieldsDelete,
+            ]);
         return view("test");
     }
 
